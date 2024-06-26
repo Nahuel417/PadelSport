@@ -1,0 +1,14 @@
+verde claro: #94C93D
+verde claro inputs: #5e936f
+verde claro2: #2c7c46
+verde oscuro: #007527
+
+azul oscuro: #042549
+azul oscuro2: #092747
+azul claro: #1452aa
+
+fondo blanco: #d3d3d3
+
+gris opaco: #333333
+
+

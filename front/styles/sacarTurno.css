@@ -1,0 +1,297 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+#body {
+    background-color: #d3d3d3;
+}
+
+/**  header  **/
+#header {
+    background-color: #2c7c46;
+}
+
+header div.contenedor-header {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px 0;
+}
+
+div.contenedor-header div a {
+    text-decoration: none;
+    color: white;
+}
+
+div.caja-logo {
+    font-size: 24px;
+}
+
+div.caja-logo a img {
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #2c7c46;
+    transition: all 0.4s ease-in-out;
+}
+
+div.caja-logo a img:hover {
+    border-color: #004919;
+    transform: scale(1.1);
+}
+div.caja-ul {
+    width: 70%;
+}
+
+div.caja-ul ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+div.caja-ul ul li {
+    font-size: 14px;
+    margin: 0 30px;
+}
+
+div.caja-ul ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+div.caja-ul ul li a::before {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #d3d3d3;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: all 0.4s ease-out;
+}
+
+div.caja-ul ul li:hover a::before {
+    width: 100%;
+}
+
+div.caja-sesion a {
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.caja-sesion a:hover {
+    background-color: white;
+    color: #004919;
+}
+/**  header  **/
+
+/**  main  **/
+div.contenedor-main {
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+div.contenedor-main h3 {
+    color: #092747;
+}
+
+hr.linea-titulo {
+    border-color: #092747;
+    opacity: 0.8;
+}
+
+div.contenedor-main p.aviso {
+    padding: 15px;
+    font-size: 14px;
+    background-color: #1d3d5f;
+    border-radius: 5px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+div.caja-inputs {
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: #2c7c46;
+    padding: 20px 40px;
+}
+
+div.caja-inputs label {
+    font-size: 16px;
+    color: white;
+}
+
+div.caja-asunto {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+div.caja-asunto div.caja-select select {
+    color: white;
+    border-radius: 3px;
+    border: 4px solid transparent;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #5e936f;
+    margin-top: 5px;
+    appearance: none;
+    transition: all 0.3s ease-in-out;
+}
+
+div.caja-asunto div.caja-select select:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.75);
+}
+
+div.caja-datos {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+div.caja-inputsDatos {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+}
+
+div.caja-select {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+div.caja-select svg {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    pointer-events: none;
+}
+
+div.caja-select input,
+div.caja-select select {
+    width: 100%;
+}
+
+input[type='date']::-webkit-inner-spin-button,
+input[type='date']::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    cursor: pointer;
+    opacity: 0;
+}
+
+input[type='time']::-webkit-inner-spin-button,
+input[type='time']::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    cursor: pointer;
+    opacity: 0;
+}
+
+div.caja-select select,
+div.caja-select input {
+    color: white;
+    border: 4px solid transparent;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #5e936f;
+    margin-top: 5px;
+    appearance: none;
+    transition: all 0.3s ease-in-out;
+}
+
+div.caja-select select:hover,
+div.caja-select input:hover {
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+div.caja-boton {
+    margin: 50px 0;
+}
+
+div.caja-boton button {
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    background-color: #004919;
+    width: 100%;
+    opacity: 0.7;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* div.caja-boton button span {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+} */
+/* 
+div.caja-boton button span::after {
+    content: '';
+    width: 550px;
+    position: absolute;
+    z-index: -1;
+    top: -8px;
+    left: -310px;
+    border-bottom: 40px solid #1d3d5f;
+    border-right: 80px solid transparent;
+    border-left: 80px solid transparent;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+div.caja-boton button:hover span::after {
+    right: 0;
+    opacity: 1;
+} */
+
+div.caja-boton button:hover {
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.75);
+    background: #d3d3d3;
+    color: black;
+    opacity: 0.9;
+}
+
+/**  main  **/
+
+/**  footer  **/
+footer div.contenedor-footer {
+    margin-top: 51px;
+    background-color: #1d3d5f;
+    padding: 25px;
+}
+
+div.contenedor-footer p {
+    margin: 0;
+}
+/**  footer  **/
+
+/*?  MEDIA QUERIES  ?*/
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}
+/*?  MEDIA QUERIES  ?*/

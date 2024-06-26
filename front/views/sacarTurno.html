@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet" />
+
+        <link rel="stylesheet" href="../styles/sacarTurno.css" />
+        <link rel="stylesheet" href="./styles/reset.css" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+        <title>Sacar Turno</title>
+    </head>
+    <body id="body">
+        <div class="contendor-body">
+            <header id="header">
+                <div class="contenedor-header">
+                    <div class="caja-logo">
+                        <a class="logo" href="#"
+                            ><img src="https://thumbs.dreamstime.com/b/dise%C3%B1o-del-logotipo-de-padel-sport-moderno-logo-dise%C3%B1os-sencillos-y-modernos-187545892.jpg" alt=""
+                        /></a>
+                    </div>
+
+                    <div class="caja-ul">
+                        <ul>
+                            <li><a href="../index.html"> Home </a></li>
+                            <li><a href="./misTurnos.html"> Mi Historial </a></li>
+                            <li><a href="./sacarTurno.html"> Alquilar Cancha </a></li>
+                            <li><a href="#"> Contacto </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="caja-sesion">
+                        <a href="./registro.html"> Mi Perfil </a>
+                    </div>
+                </div>
+            </header>
+
+            <main id="main">
+                <div class="contenedor-main">
+                    <h3>Alquilar una Cancha</h3>
+                    <hr class="linea-titulo" />
+
+                    <p class="aviso">Complete el siguiente formulario para alquilar una cancha. <b>Recuerde que el horario para hacerlo es de 15:00hs a 23:00hs.</b></p>
+
+                    <form action="">
+                        <div class="caja-inputs" id="caja-inputs">
+                            <div class="caja-asunto">
+                                <div class="caja-label">
+                                    <label for="asunto"> Asunto </label>
+                                </div>
+                                <div class="caja-select">
+                                    <select name="asunto" id="select-asunto">
+                                        <option value="">Seleccione un Asunto</option>
+                                        <option value="jugar">Jugar</option>
+                                        <option value="entrenar">Entrenar</option>
+                                    </select>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="caja-datos" id="caja-datos">
+                                <div class="caja-inputsDatos">
+                                    <div class="caja-label">
+                                        <label for="dia">Dia</label>
+                                    </div>
+                                    <div class="caja-select">
+                                        <input type="date" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6z" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="caja-inputsDatos">
+                                    <div class="caja-label">
+                                        <label for="horario">Horario</label>
+                                    </div>
+                                    <div class="caja-select">
+                                        <input type="time" value="--:--" />
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-caret-down-square-fill icon"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6z" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="caja-inputsDatos">
+                                    <div class="caja-label">
+                                        <label for="cancha">Cancha</label>
+                                    </div>
+                                    <div class="caja-select">
+                                        <select name="cancha" id="cancha">
+                                            <option value="" selected>- -</option>
+                                            <option value="cancha1">Cancha 1</option>
+                                            <option value="cancha2">Cancha 2</option>
+                                            <option value="cancha3">Cancha 3</option>
+                                            <option value="cancha4">Cancha 4</option>
+                                        </select>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-caret-down-square-fill icon"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6z" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="caja-inputsDatos">
+                                    <div class="caja-label">
+                                        <label for="entrenador">Entrenador</label>
+                                    </div>
+                                    <div class="caja-select">
+                                        <select name="entrenador" id="entrenador">
+                                            <option value="" selected>- -</option>
+                                            <option value="entrenadorAlonso">Alonso Corvalan</option>
+                                            <option value="entrenadorNahuel">Nahuel Banco</option>
+                                            <option value="entrenadorPedro">Pedro Corvalan</option>
+                                        </select>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caja-boton" id="caja-boton">
+                                <button type="submit">Alquilar Cancha</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+
+            <footer id="footer">
+                <div class="contenedor-footer">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt laboriosam quia, vero quas placeat iste distinctio a excepturi voluptates laborum nobis
+                        repellat, quaerat ab! Tempora distinctio eum sapiente incidunt ducimus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, debitis nostrum.
+                        Nobis aspernatur recusandae quae minus doloribus magni, ea voluptatem debitis eius cupiditate aperiam et ducimus eum quaerat id eaque.
+                    </p>
+
+                    <h3>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat sunt alias quidem eos rerum magnam corrupti aperiam non quia! Laudantium deleniti maiores
+                        error. Suscipit nemo aut possimus ipsa doloremque vitae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis laudantium et ratione. Ullam
+                        odio magni ea et suscipit nobis accusamus laboriosam aliquam! Quisquam corrupti eos quibusdam dolores temporibus, quod omnis.
+                    </h3>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
