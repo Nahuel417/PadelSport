@@ -15,9 +15,7 @@ export const getUserByIdController = async (req: Request, res: Response) => {
 };
 
 export const registerUserController = async (req: Request, res: Response) => {
-    const { name, last_name, email, password, date, avatar } = req.body;
-    const newUser: IUser = await registerUserService({ name, last_name, email, password, date, avatar });
-
+    const newUser: IUser = await registerUserService(req.body);
     res.status(200).json(newUser);
     // res.json('Registro de un nuevo usuario.');
 };

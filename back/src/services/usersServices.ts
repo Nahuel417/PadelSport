@@ -21,7 +21,6 @@ let users: IUser[] = [
         avatar: 'data:image/jpeg;base64,/9j/4AAQS',
     },
 ];
-export default users;
 
 let id: number = 3;
 
