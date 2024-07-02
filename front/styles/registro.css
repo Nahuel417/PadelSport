@@ -104,16 +104,6 @@ div.contenedor-main h3 {
     color: #092747;
 }
 
-/* div.contenedor-main p.aviso {
-    padding: 15px;
-    font-size: 14px;
-    background-color: #1d3d5f;
-    border-radius: 5px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-} */
-
 hr.linea-titulo {
     border-color: #092747;
     opacity: 0.8;
@@ -125,7 +115,7 @@ div.form {
     background-color: #238744;
     border-radius: 10px;
     margin-top: 50px;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 15px 0px -1px rgba(0, 0, 0, 0.75);
 }
 
 div.contendor-form {
@@ -151,17 +141,29 @@ div.caja-registro input {
     width: 100%;
     color: white;
     border-radius: 3px;
-    border: 4px solid transparent;
+    border: 1px solid transparent;
     outline: none;
-    padding: 5px;
+    padding: 10px;
     font-size: 14px;
     background-color: #004919;
     margin-top: 5px;
+    box-shadow: 6px 6px 0px -1px rgba(0, 0, 0, 0.7);
     transition: all 0.3s ease-in-out;
 }
 
+div.caja-registro input:hover {
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.7);
+    transform: translateY(-7px);
+    cursor: pointer;
+}
+
+div.caja-registro input:focus {
+    transform: translateY(-7px);
+    cursor: text;
+}
+
 div.caja-registro input::placeholder {
-    color: #d3d3d3;
+    color: rgba(255, 255, 255, 0.3);
     font-size: 14px;
 }
 
@@ -174,16 +176,16 @@ input[type='file']::-webkit-file-upload-button {
     border: none;
     border-radius: 3px;
     outline: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.3);
     font-size: 16px;
     padding: 2.5px;
 }
 
 input[type='file']::-webkit-file-upload-button:hover {
     cursor: pointer;
-    background-color: #023314;
-    opacity: 0.9;
-    transition: all 0.5s ease-in-out;
+    background-color: #238744;
+    color: white;
+    transition: all 0.4s ease-in-out;
 }
 
 input[type='date']::-webkit-inner-spin-button,
@@ -195,11 +197,6 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 div.caja-registro div label {
     font-size: 16px;
-}
-
-div.caja-registro input:hover {
-    box-shadow: 0px 0px 6px 2px rgba(255, 255, 255, 0.75);
-    cursor: pointer;
 }
 
 div.caja-fecha svg {
@@ -221,9 +218,8 @@ div.form p {
 
 div.caja-boton {
     width: 100%;
-    padding: 0px 40px 30px 40px;
+    padding: 0px 40px 50px 40px;
     text-align: center;
-    margin-bottom: 40px;
 }
 
 div.caja-boton button {
@@ -240,9 +236,9 @@ div.caja-boton button {
 }
 
 div.caja-boton button:hover {
-    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.75);
-    background: #d3d3d3;
-    color: black;
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
+    transform: translateY(-7px);
+    background: #004919;
     opacity: 1;
 }
 /**  main  **/
