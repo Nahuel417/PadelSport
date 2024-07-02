@@ -15,7 +15,7 @@ let credenciales: ICredential[] = [
 
 let id = 3;
 
-export const credentialsIdService = async (email: string, password: string): Promise<number> => {
+export const createCredentialService = async (email: string, password: string): Promise<number> => {
     try {
         const newCredentials: ICredential = {
             id,
@@ -32,15 +32,16 @@ export const credentialsIdService = async (email: string, password: string): Pro
     }
 };
 
-export const validateCredentialsService = async (email: string, password: string): Promise<number | string> => {
-    try {
-        const credentials = credenciales.find((cred) => {
-            return cred.email == email && cred.password == password;
-        });
+export const validateCredentialService = async (email: string, password: string): Promise<number> => {
+    const foundCredential = credenciales.find((cred) => {
+        return cred.email == email;
+    });
 
-        return credentials ? credentials.id : 'Credenciales invalidas';
-    } catch (error) {
-        console.log('Error en validateCredentialsService: ', error);
-        throw new Error('No se pudo validar los datos.');
+    if (!foundCredential) {
+        throw Error('No existe el email.');
+    } else if (foundCredential && foundCredential.password != password) {
+        throw Error('La contraseña no coincide.');
     }
+
+    return foundCredential.id;
 };

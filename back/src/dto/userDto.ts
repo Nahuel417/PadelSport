@@ -3,7 +3,7 @@ interface userDto {
     last_name: string;
     email: string;
     password: string;
-    date: string;
+    birthday: string;
     avatar: string;
 }
 

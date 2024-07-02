@@ -3,7 +3,7 @@ interface IUser {
     name: string;
     last_name: string;
     credentialsId: number;
-    date: string;
+    birthday: string;
     avatar: string;
 }
 
