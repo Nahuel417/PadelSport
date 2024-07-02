@@ -1,13 +1,13 @@
 import userDto from '../dto/userDto';
 import IUser from '../interfaces/IUsers';
+import { credentialsIdService } from './credentialsServices';
 
 let users: IUser[] = [
     {
         id: 1,
         name: 'nahuel',
         last_name: 'banco',
-        email: 'nahuel@gmail.com',
-        password: 'nahuel123',
+        credentialsId: 1,
         date: '2000-07-19',
         avatar: 'data:image/jpeg;base64,/9j/4AAQS',
     },
@@ -15,8 +15,7 @@ let users: IUser[] = [
         id: 2,
         name: 'nahuel2',
         last_name: 'banco',
-        email: 'nahuel@gmail.com',
-        password: 'nahuel123',
+        credentialsId: 2,
         date: '2000-07-19',
         avatar: 'data:image/jpeg;base64,/9j/4AAQS',
     },
@@ -47,12 +46,13 @@ export const getUserByIdService = async (id: number): Promise<IUser[] | string> 
 
 export const registerUserService = async (usuario: userDto): Promise<IUser> => {
     try {
+        const credencialesId = await credentialsIdService(usuario.email, usuario.password);
+
         const newUser: IUser = {
             id,
             name: usuario.name,
             last_name: usuario.last_name,
-            email: usuario.email,
-            password: usuario.password,
+            credentialsId: credencialesId,
             date: usuario.date,
             avatar: usuario.avatar,
         };

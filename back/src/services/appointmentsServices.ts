@@ -8,8 +8,9 @@ let appointments: IAppointments[] = [
         dia: 'miercoles',
         horario: '18:00',
         cancha: 'cancha 1',
-        entrenador: 'alonso',
-        active: true,
+        entrenador: 'ninguno',
+        status: true,
+        userId: 1,
     },
     {
         id: 2,
@@ -18,13 +19,14 @@ let appointments: IAppointments[] = [
         horario: '15:00',
         cancha: 'cancha 3',
         entrenador: 'ninguno',
-        active: true,
+        status: true,
+        userId: 2,
     },
 ];
 
 let id: number = 3;
 
-let active: boolean = true;
+// let status: boolean = true;
 
 export const getAppointmentsService = async (): Promise<IAppointments[]> => {
     try {
@@ -56,7 +58,8 @@ export const scheduleAppointmentService = async (appointment: appointmentsDto): 
             horario: appointment.horario,
             cancha: appointment.cancha,
             entrenador: appointment.entrenador,
-            active,
+            status: true,
+            userId: appointment.userId,
         };
         id++;
 
@@ -69,11 +72,16 @@ export const scheduleAppointmentService = async (appointment: appointmentsDto): 
     }
 };
 
-export const cancelAppointmentService = async (appointment: IAppointments): Promise<IAppointments> => {
+export const cancelAppointmentService = async (id: number): Promise<IAppointments | string> => {
     try {
-        appointment.active = false;
+        const appointment = appointments.find((appointment) => appointment.id === id);
 
-        return appointment;
+        if (appointment != undefined) {
+            appointment.status = false;
+            return appointment;
+        } else {
+            return 'No se pudo encontrar el turno solicitado';
+        }
     } catch (error) {
         console.log('Error en cancelAppointmentService: ', error);
         throw new Error('No se pudo cancelar el turno');

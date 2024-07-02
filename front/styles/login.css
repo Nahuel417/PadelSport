@@ -41,6 +41,7 @@ div.caja-logo a img:hover {
     border-color: #004919;
     transform: scale(1.1);
 }
+
 div.caja-ul {
     width: 70%;
 }
@@ -94,133 +95,77 @@ div.caja-sesion a:hover {
 
 /**  main  **/
 div.contenedor-main {
-    width: 60%;
+    display: flex;
+    width: 50%;
     margin: auto;
     margin-top: 40px;
+    flex-direction: column;
+    justify-content: center;
 }
 
 div.contenedor-main h3 {
     color: #092747;
+    margin: 0%;
 }
 
 hr.linea-titulo {
     border-color: #092747;
+    margin-bottom: 50px;
     opacity: 0.8;
 }
 
-div.contenedor-main p.aviso {
-    padding: 15px;
-    font-size: 14px;
-    background-color: #1d3d5f;
-    border-radius: 5px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-div.caja-inputs {
-    margin-top: 50px;
-    border-radius: 10px;
-    background-color: #238744;
-    padding: 20px 40px;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-div.caja-inputs label {
-    font-size: 16px;
-    color: white;
-}
-
-div.caja-asunto {
+div.contendor-form {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin: 50px 0;
-}
-
-div.caja-asunto div.caja-select select {
-    color: white;
-    border-radius: 3px;
-    border: 4px solid transparent;
-    outline: none;
-    padding: 5px;
-    font-size: 14px;
-    background-color: #004919;
-    margin-top: 5px;
-    appearance: none;
-    transition: all 0.3s ease-in-out;
-}
-
-div.caja-asunto div.caja-select select:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 6px 2px rgba(255, 255, 255, 0.75);
-}
-
-div.caja-datos {
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 0;
-}
-
-div.caja-inputsDatos {
-    display: flex;
-    flex-direction: column;
-    width: 22%;
-}
-
-div.caja-select {
-    display: flex;
     align-items: center;
-    position: relative;
+    border-radius: 30px;
+    margin: auto;
+    background-color: #238744;
+    padding: 50px 0px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-div.caja-select svg {
-    position: absolute;
-    right: 10px;
-    top: 40%;
-    pointer-events: none;
+div.contendor-form a {
+    text-decoration: none;
+    color: lightblue;
 }
 
-div.caja-select input,
-div.caja-select select {
+div.caja-login {
+    margin: 10px 0 30px 0;
+    width: 80%;
+}
+
+div.caja-login input {
     width: 100%;
-}
-
-input[type='date']::-webkit-inner-spin-button,
-input[type='date']::-webkit-calendar-picker-indicator {
-    -webkit-appearance: none;
-    cursor: pointer;
-    opacity: 0;
-}
-
-input[type='time']::-webkit-inner-spin-button,
-input[type='time']::-webkit-calendar-picker-indicator {
-    -webkit-appearance: none;
-    cursor: pointer;
-    opacity: 0;
-}
-
-div.caja-select select,
-div.caja-select input {
     color: white;
-    border: 4px solid transparent;
     border-radius: 3px;
+    border: 4px solid transparent;
     outline: none;
     padding: 5px;
     font-size: 14px;
     background-color: #004919;
     margin-top: 5px;
-    appearance: none;
     transition: all 0.3s ease-in-out;
 }
 
-div.caja-select select:hover,
-div.caja-select input:hover {
+div.caja-login input::placeholder {
+    color: #d3d3d3;
+    font-size: 14px;
+}
+
+div.caja-login label {
+    font-size: 14px;
+}
+
+div.caja-login input:hover {
     box-shadow: 0px 0px 6px 2px rgba(255, 255, 255, 0.75);
     cursor: pointer;
 }
 
 div.caja-boton {
-    margin: 50px 0;
+    width: 80%;
+    margin-top: 25px;
 }
 
 div.caja-boton button {
@@ -233,34 +178,8 @@ div.caja-boton button {
     background-color: #004919;
     width: 100%;
     opacity: 0.7;
-    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
-
-/* div.caja-boton button span {
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease-in-out;
-} */
-/* 
-div.caja-boton button span::after {
-    content: '';
-    width: 550px;
-    position: absolute;
-    z-index: -1;
-    top: -8px;
-    left: -310px;
-    border-bottom: 40px solid #1d3d5f;
-    border-right: 80px solid transparent;
-    border-left: 80px solid transparent;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-}
-
-div.caja-boton button:hover span::after {
-    right: 0;
-    opacity: 1;
-} */
 
 div.caja-boton button:hover {
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.75);
@@ -269,19 +188,82 @@ div.caja-boton button:hover {
     opacity: 1;
 }
 
-/**  main  **/
-
-/**  footer  **/
-footer div.contenedor-footer {
-    margin-top: 51px;
-    background-color: #1d3d5f;
-    padding: 25px;
+div.cookie-recuerdame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
-div.contenedor-footer p {
+div.cookie-recuerdame div {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+div.cookie-recuerdame div label {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+div.cookie-recuerdame div input[type='checkbox'] {
+    width: 14px;
+    height: 14px;
+    accent-color: #004919;
+}
+
+div.cookie-recuerdame span {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+div.cookie-recuerdame span a {
+    color: lightblue;
+}
+
+div.cookie-recuerdame span a:hover {
+    color: #092747;
+}
+
+hr.linea-form {
+    border-color: #004919;
+    width: 80%;
+    opacity: 0.8;
+}
+
+div.footer-form {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 10px;
+}
+
+div.footer-form div {
+    font-size: 12px;
+}
+
+div.footer-form div.volver-home {
+    display: flex;
+    align-items: center;
+}
+
+div.footer-form div a {
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.footer-form div.volver-home a:hover {
+    text-decoration: underline;
+}
+
+div.footer-form p,
+div.footer-form span {
+    font-style: italic;
     margin: 0;
+    color: #d3d3d3;
 }
-/**  footer  **/
+/**  main  **/
 
 /*?  MEDIA QUERIES  ?*/
 @media (max-width: 1200px) {

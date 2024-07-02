@@ -5,11 +5,8 @@ let header = document.getElementById('contenedor-header');
 const eventoMenu = window.addEventListener('scroll', () => {
     let ubicacionActual = window.scrollY;
 
-    if (ubicacionPrincipal <= ubicacionActual) {
-        header.classList.add('stycky');
-    } else {
+    if (!(ubicacionPrincipal <= ubicacionActual)) {
         header.classList.add('styckya');
-        header.classList.remove('stycky');
     }
 
     if (ubicacionActual <= 20) {

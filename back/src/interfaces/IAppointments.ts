@@ -5,7 +5,8 @@ interface IAppointments {
     horario: string;
     cancha: string;
     entrenador: string;
-    active: boolean;
+    status: boolean;
+    userId: number;
 }
 
 export default IAppointments;
