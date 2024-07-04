@@ -1,75 +1,42 @@
+import { UserModel } from '../config/data-source';
 import userDto from '../dto/userDto';
-import IUser from '../interfaces/IUsers';
+import { Credential } from '../entities/Credential';
+import { User } from '../entities/User';
 import { createCredentialService } from './credentialsServices';
 
-let users: IUser[] = [
-    {
-        id: 1,
-        name: 'nahuel',
-        last_name: 'banco',
-        credentialsId: 1,
-        birthday: '2000-07-19',
-        avatar: 'data:image/jpeg;base64,/9j/4AAQS',
-    },
-    {
-        id: 2,
-        name: 'nahuel2',
-        last_name: 'banco',
-        credentialsId: 2,
-        birthday: '2000-07-19',
-        avatar: 'data:image/jpeg;base64,/9j/4AAQS',
-    },
-];
+export const registerUserService = async (usuario: userDto): Promise<User> => {
+    const credenciales: Credential = await createCredentialService(usuario.email, usuario.password);
 
-let id: number = 3;
+    const newUser: User = await UserModel.create({
+        name: usuario.name,
+        last_name: usuario.last_name,
+        birthday: usuario.birthday,
+        avatar: usuario.avatar,
+        credentials: credenciales,
+    });
+    await UserModel.save(newUser);
 
-export const getUsersService = async (): Promise<IUser[]> => {
-    try {
-        const allUsers: IUser[] = users;
-        return allUsers;
-    } catch (error) {
-        console.log('Error en getUsersService: ', error);
-        throw new Error('No se pueden mostrar todos los usuarios');
-    }
+    return newUser;
 };
 
-export const getUserByIdService = async (id: number): Promise<IUser[]> => {
-    const user = users.filter((user: IUser) => user.id === id);
+export const getUsersService = async (): Promise<User[]> => {
+    const allUsers = await UserModel.find({
+        relations: ['credentials'],
+        select: { credentials: { email: true, password: true } },
+    });
 
-    if (user.length == 0) throw Error('Usuario no encontrado');
+    return allUsers;
+};
+
+export const getUserByIdService = async (id: number): Promise<User> => {
+    const user: User | null = await UserModel.findOneBy({ id });
+
+    if (!user) throw Error('Usuario no encontrado');
     else return user;
 };
 
-export const registerUserService = async (usuario: userDto): Promise<IUser> => {
-    try {
-        const credencialesId = await createCredentialService(usuario.email, usuario.password);
+export const deleteUserService = async (id: number): Promise<string> => {
+    await UserModel.delete({ id });
 
-        const newUser: IUser = {
-            id,
-            name: usuario.name,
-            last_name: usuario.last_name,
-            credentialsId: credencialesId,
-            birthday: usuario.birthday,
-            avatar: usuario.avatar,
-        };
-        id++;
-
-        users.push(newUser);
-
-        return newUser;
-    } catch (error) {
-        console.log('Error en registerUserService: ', error);
-        throw new Error('No se pudo registrar el usuario');
-    }
-};
-
-export const deleteUserService = async (id: number): Promise<IUser[]> => {
-    try {
-        users = users.filter((user: IUser) => user.id !== id);
-
-        return users;
-    } catch (error) {
-        console.log('Error en deleteUserService: ', error);
-        throw new Error('No se pudo eliminar el usuario');
-    }
+    return `El usuario con id: ${id} fue eliminado con exito.`;
 };

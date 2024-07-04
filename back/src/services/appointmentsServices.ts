@@ -1,77 +1,48 @@
+import { AppointmentsModel, UserModel } from '../config/data-source';
 import appointmentsDto from '../dto/appointmentsDto';
-import IAppointments from '../interfaces/IAppointments';
+import { Appointment } from '../entities/Appointment';
+import { User } from '../entities/User';
 
-let appointments: IAppointments[] = [
-    {
-        id: 1,
-        asunto: 'jugar',
-        dia: 'miercoles',
-        horario: '18:00',
-        cancha: 'cancha 1',
-        entrenador: 'ninguno',
+export const scheduleAppointmentService = async (appointment: appointmentsDto): Promise<Appointment> => {
+    const user: User | null = await UserModel.findOne({ where: { id: appointment.userId } });
+    if (!user) throw new Error('Usuario no encontrado.');
+
+    const newAppointment: Appointment = await AppointmentsModel.create({
+        asunto: appointment.asunto,
+        dia: appointment.dia,
+        horario: appointment.horario,
+        cancha: appointment.cancha,
+        entrenador: appointment.entrenador,
         status: 'active',
-        userId: 1,
-    },
-    {
-        id: 2,
-        asunto: 'entrenar',
-        dia: 'lunes',
-        horario: '15:00',
-        cancha: 'cancha 3',
-        entrenador: 'ninguno',
-        status: 'active',
-        userId: 2,
-    },
-];
+        user: user,
+    });
+    await AppointmentsModel.save(newAppointment);
 
-let id: number = 3;
-
-export const getAppointmentsService = async (): Promise<IAppointments[]> => {
-    try {
-        return appointments;
-    } catch (error) {
-        console.log('Error en getAppointmentsService: ', error);
-        throw new Error('No se pueden mostrar todos los turnos');
-    }
+    return newAppointment;
 };
 
-export const getAppointmentByIdService = async (id: number): Promise<IAppointments[]> => {
-    const appointment = appointments.filter((appointments: IAppointments) => appointments.id === id);
-
-    if (appointment.length == 0) throw Error('No se encontro el turno solicitado');
-    else return appointment;
+export const getAppointmentsService = async (): Promise<Appointment[]> => {
+    const appointments: Appointment[] = await AppointmentsModel.find({
+        relations: ['user', 'user.credentials'],
+        select: { user: { name: true, last_name: true, credentials: { email: true } } },
+    });
+    return appointments;
 };
 
-export const scheduleAppointmentService = async (appointment: appointmentsDto): Promise<IAppointments> => {
-    try {
-        const newAppointment: IAppointments = {
-            id,
-            asunto: appointment.asunto,
-            dia: appointment.dia,
-            horario: appointment.horario,
-            cancha: appointment.cancha,
-            entrenador: appointment.entrenador,
-            status: 'active',
-            userId: appointment.userId,
-        };
-        id++;
+export const getAppointmentByIdService = async (id: number): Promise<Appointment> => {
+    const appointment: Appointment | null = await AppointmentsModel.findOneBy({ id });
 
-        appointments.push(newAppointment);
+    if (!appointment) throw Error('No se encontro el turno solicitado');
 
-        return newAppointment;
-    } catch (error) {
-        console.log('Error en scheduleAppointmentService: ', error);
-        throw new Error('No se pudo agendar el turno');
-    }
+    return appointment;
 };
 
-export const cancelAppointmentService = async (id: number): Promise<IAppointments> => {
-    const appointment = appointments.find((appointment) => appointment.id === id);
+export const cancelAppointmentService = async (id: number): Promise<Appointment> => {
+    const appointment: Appointment | null = await AppointmentsModel.findOneBy({ id });
+    if (!appointment) throw Error('No se pudo encontrar el turno solicitado');
 
-    if (appointment != undefined) {
-        appointment.status = 'canceled';
-        return appointment;
-    } else {
-        throw Error('No se pudo encontrar el turno solicitado');
-    }
+    appointment.status = 'canceled';
+    await AppointmentsModel.save(appointment);
+
+    return appointment;
 };

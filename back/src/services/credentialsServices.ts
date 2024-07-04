@@ -1,47 +1,24 @@
-import ICredential from '../interfaces/ICredentials';
+import { CredentialModel } from '../config/data-source';
+import { Credential } from '../entities/Credential';
 
-let credenciales: ICredential[] = [
-    {
-        id: 1,
-        email: 'nahuel@gmail.com',
-        password: 'nahuel123',
-    },
-    {
-        id: 2,
-        email: 'alejandro@gmail.com',
-        password: 'alejandro123',
-    },
-];
+export const createCredentialService = async (email: string, password: string): Promise<Credential> => {
+    const newCredentials = await CredentialModel.create({ email, password });
+    await CredentialModel.save(newCredentials);
 
-let id = 3;
-
-export const createCredentialService = async (email: string, password: string): Promise<number> => {
-    try {
-        const newCredentials: ICredential = {
-            id,
-            email,
-            password,
-        };
-        id++;
-        credenciales.push(newCredentials);
-
-        return newCredentials.id;
-    } catch (error) {
-        console.log('Error en credentialsIdService: ', error);
-        throw new Error('No se pueden mostrar el id de las credenciales.');
-    }
+    return newCredentials;
 };
 
-export const validateCredentialService = async (email: string, password: string): Promise<number> => {
-    const foundCredential = credenciales.find((cred) => {
-        return cred.email == email;
-    });
+export const validateCredentialService = async (email: string, password: string): Promise<string> => {
+    const foundCredentialEmail: Credential | null = await CredentialModel.findOne({ where: { email: email } });
 
-    if (!foundCredential) {
+    if (!foundCredentialEmail) {
         throw Error('No existe el email.');
-    } else if (foundCredential && foundCredential.password != password) {
-        throw Error('La contraseña no coincide.');
     }
 
-    return foundCredential.id;
+    const foundCredentials: Credential | null = await CredentialModel.findOne({ where: { email: email, password: password } });
+    if (!foundCredentials) {
+        throw Error('Las credenciales son invalidas.');
+    }
+
+    return 'Usuario logeado correctamente!';
 };

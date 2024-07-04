@@ -1,12 +1,22 @@
 import { Request, Response } from 'express';
-import IUser from '../interfaces/IUsers';
 import { deleteUserService, getUserByIdService, getUsersService, registerUserService } from '../services/usersServices';
 import { validateCredentialService } from '../services/credentialsServices';
+import { User } from '../entities/User';
+
+// Registro de un nuevo usuario
+export const registerUserController = async (req: Request, res: Response) => {
+    try {
+        const newUser: User = await registerUserService(req.body);
+        res.status(200).json(newUser);
+    } catch (error: any) {
+        res.status(400).json({ error: error.message });
+    }
+};
 
 // Obtener el listado de todos los usuarios
 export const getUsersController = async (req: Request, res: Response) => {
     try {
-        const users: IUser[] = await getUsersService();
+        const users: User[] = await getUsersService();
         res.status(201).json(users);
     } catch (error: any) {
         res.status(400).json({ error: error.message });
@@ -16,18 +26,8 @@ export const getUsersController = async (req: Request, res: Response) => {
 // Obtener el detalle de un usuario específico
 export const getUserByIdController = async (req: Request, res: Response) => {
     try {
-        const user: IUser[] = await getUserByIdService(+req.params.id);
+        const user: User = await getUserByIdService(+req.params.id);
         res.status(200).json(user);
-    } catch (error: any) {
-        res.status(400).json({ error: error.message });
-    }
-};
-
-// Registro de un nuevo usuario
-export const registerUserController = async (req: Request, res: Response) => {
-    try {
-        const newUser: IUser = await registerUserService(req.body);
-        res.status(200).json(newUser);
     } catch (error: any) {
         res.status(400).json({ error: error.message });
     }
@@ -37,8 +37,8 @@ export const registerUserController = async (req: Request, res: Response) => {
 export const loginUserController = async (req: Request, res: Response) => {
     try {
         const { email, password } = req.body;
-        await validateCredentialService(email, password);
-        res.json('Usuario logeado correctamente!');
+        const credenciales = await validateCredentialService(email, password);
+        res.status(200).json(credenciales);
     } catch (error: any) {
         res.status(400).json({ error: error.message });
     }
@@ -48,8 +48,8 @@ export const loginUserController = async (req: Request, res: Response) => {
 export const deleteUserController = async (req: Request, res: Response) => {
     try {
         const { id } = req.body;
-        const users: IUser[] = await deleteUserService(+id);
-        res.status(200).json({ message: `El usuario con id: ${+id} fue eliminado con exito!`, ListaUsuarios: users });
+        const deleteUser: string = await deleteUserService(id);
+        res.status(200).json(deleteUser);
     } catch (error: any) {
         res.status(400).json({ error: error.message });
     }
