@@ -24,5 +24,6 @@ export class User {
     credentials: Credential;
 
     @OneToMany(() => Appointment, (appointment) => appointment.user)
+    @JoinColumn()
     appointments: Appointment[];
 }

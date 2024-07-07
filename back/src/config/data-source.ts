@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { POSTGRES_PASS } from './envs';
+import { DATA_BASE, POSTGRES_PASS } from './envs';
 import { User } from '../entities/User';
 import { Credential } from '../entities/Credential';
 import { Appointment } from '../entities/Appointment';
@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
     port: 5432,
     username: 'postgres',
     password: POSTGRES_PASS,
-    database: 'demo',
+    database: DATA_BASE,
     // dropSchema: true,
     synchronize: true,
     logging: false,

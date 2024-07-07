@@ -6,7 +6,7 @@ import { Appointment } from '../entities/Appointment';
 export const scheduleAppointments = async (req: Request, res: Response) => {
     try {
         const newAppointment: Appointment = await scheduleAppointmentService(req.body);
-        res.status(200).json(newAppointment);
+        res.status(201).json(newAppointment);
     } catch (error: any) {
         res.status(400).json({ error: error.message });
     }
@@ -18,7 +18,7 @@ export const getAppointments = async (req: Request, res: Response) => {
         const appointments: Appointment[] = await getAppointmentsService();
         res.status(201).json(appointments);
     } catch (error: any) {
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
     }
 };
 
@@ -28,17 +28,17 @@ export const getAppointmentById = async (req: Request, res: Response) => {
         const appointments: Appointment = await getAppointmentByIdService(+req.params.id);
         res.status(200).json(appointments);
     } catch (error: any) {
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
     }
 };
 
 // Cambiar el estatus de un turno a “cancelled”
 export const cancelAppointments = async (req: Request, res: Response) => {
     try {
-        const { id } = req.body;
-        const appointments = await cancelAppointmentService(id);
+        const { id } = req.params;
+        const appointments = await cancelAppointmentService(+id);
         res.status(200).json(appointments);
     } catch (error: any) {
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
     }
 };

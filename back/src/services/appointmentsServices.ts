@@ -4,12 +4,16 @@ import { Appointment } from '../entities/Appointment';
 import { User } from '../entities/User';
 
 export const scheduleAppointmentService = async (appointment: appointmentsDto): Promise<Appointment> => {
-    const user: User | null = await UserModel.findOne({ where: { id: appointment.userId } });
+    const user: User | null = await UserModel.findOne({
+        where: { id: appointment.userId },
+        relations: ['credentials'],
+        select: { id: true, name: true, last_name: true, credentials: { email: true } },
+    });
     if (!user) throw new Error('Usuario no encontrado.');
 
     const newAppointment: Appointment = await AppointmentsModel.create({
         asunto: appointment.asunto,
-        dia: appointment.dia,
+        fecha: appointment.dia,
         horario: appointment.horario,
         cancha: appointment.cancha,
         entrenador: appointment.entrenador,

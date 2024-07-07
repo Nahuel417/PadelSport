@@ -14,6 +14,7 @@ export const registerUserService = async (usuario: userDto): Promise<User> => {
         avatar: usuario.avatar,
         credentials: credenciales,
     });
+
     await UserModel.save(newUser);
 
     return newUser;
@@ -29,7 +30,19 @@ export const getUsersService = async (): Promise<User[]> => {
 };
 
 export const getUserByIdService = async (id: number): Promise<User> => {
-    const user: User | null = await UserModel.findOneBy({ id });
+    const user: User | null = await UserModel.findOne({
+        where: { id },
+        relations: ['credentials', 'appointments'],
+        select: {
+            id: true,
+            name: true,
+            last_name: true,
+            birthday: true,
+            avatar: true,
+            credentials: { email: true, password: true },
+            appointments: { id: true, fecha: true, horario: true, status: true },
+        },
+    });
 
     if (!user) throw Error('Usuario no encontrado');
     else return user;

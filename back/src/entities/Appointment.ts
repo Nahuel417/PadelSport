@@ -10,7 +10,7 @@ export class Appointment {
     asunto: string;
 
     @Column({ length: 20 })
-    dia: string;
+    fecha: string;
 
     @Column('time')
     horario: string;
