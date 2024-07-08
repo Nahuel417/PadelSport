@@ -123,7 +123,8 @@ div.caja-inputs {
     border-radius: 10px;
     background-color: #238744;
     padding: 20px 40px;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    /* box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
+    box-shadow: 15px 15px 0px -1px rgba(0, 0, 0, 0.75);
 }
 
 div.caja-inputs label {
@@ -140,11 +141,12 @@ div.caja-asunto {
 div.caja-asunto div.caja-select select {
     color: white;
     border-radius: 3px;
-    border: 4px solid transparent;
+    border: 1px solid transparent;
     outline: none;
-    padding: 5px;
+    padding: 10px;
     font-size: 14px;
     background-color: #004919;
+    box-shadow: 6px 6px 0px -1px rgba(0, 0, 0, 0.7);
     margin-top: 5px;
     appearance: none;
     transition: all 0.3s ease-in-out;
@@ -152,7 +154,29 @@ div.caja-asunto div.caja-select select {
 
 div.caja-asunto div.caja-select select:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 6px 2px rgba(255, 255, 255, 0.75);
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.8);
+    transform: translateY(-7px);
+}
+
+div.caja-asunto div.caja-select select:focus {
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.8);
+    transform: translateY(-7px);
+}
+
+div.caja-select svg {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+div.caja-asunto div.caja-select select:hover ~ svg {
+    transform: translateY(-7px);
+}
+
+div.caja-asunto div.caja-select select:focus ~ svg {
+    transform: translateY(-7px);
 }
 
 div.caja-datos {
@@ -171,13 +195,6 @@ div.caja-select {
     display: flex;
     align-items: center;
     position: relative;
-}
-
-div.caja-select svg {
-    position: absolute;
-    right: 10px;
-    top: 40%;
-    pointer-events: none;
 }
 
 div.caja-select input,
@@ -202,12 +219,13 @@ input[type='time']::-webkit-calendar-picker-indicator {
 div.caja-select select,
 div.caja-select input {
     color: white;
-    border: 4px solid transparent;
+    border: 1px solid transparent;
     border-radius: 3px;
     outline: none;
-    padding: 5px;
+    padding: 10px;
     font-size: 14px;
     background-color: #004919;
+    box-shadow: 6px 6px 0px -1px rgba(0, 0, 0, 0.7);
     margin-top: 5px;
     appearance: none;
     transition: all 0.3s ease-in-out;
@@ -215,12 +233,30 @@ div.caja-select input {
 
 div.caja-select select:hover,
 div.caja-select input:hover {
-    box-shadow: 0px 0px 6px 2px rgba(255, 255, 255, 0.75);
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.8);
+    transform: translateY(-7px);
     cursor: pointer;
+}
+
+div.caja-select select:focus,
+div.caja-select input:focus {
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.8);
+    transform: translateY(-7px);
+}
+
+div.caja-select select:hover ~ svg,
+div.caja-select input:hover ~ svg {
+    transform: translateY(-7px);
+}
+
+div.caja-select select:focus ~ svg,
+div.caja-select input:focus ~ svg {
+    transform: translateY(-7px);
 }
 
 div.caja-boton {
     margin: 50px 0;
+    padding-top: 30px;
 }
 
 div.caja-boton button {
@@ -233,39 +269,13 @@ div.caja-boton button {
     background-color: #004919;
     width: 100%;
     opacity: 0.7;
-    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
-
-/* div.caja-boton button span {
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease-in-out;
-} */
-/* 
-div.caja-boton button span::after {
-    content: '';
-    width: 550px;
-    position: absolute;
-    z-index: -1;
-    top: -8px;
-    left: -310px;
-    border-bottom: 40px solid #1d3d5f;
-    border-right: 80px solid transparent;
-    border-left: 80px solid transparent;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-}
-
-div.caja-boton button:hover span::after {
-    right: 0;
-    opacity: 1;
-} */
 
 div.caja-boton button:hover {
-    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.75);
-    background: #d3d3d3;
-    color: black;
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
+    transform: translateY(-7px);
+    background: #004919;
     opacity: 1;
 }
 

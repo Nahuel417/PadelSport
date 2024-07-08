@@ -41,6 +41,7 @@ div.caja-logo a img:hover {
     border-color: #004919;
     transform: scale(1.1);
 }
+
 div.caja-ul {
     width: 70%;
 }
@@ -109,92 +110,87 @@ hr.linea-titulo {
     opacity: 0.8;
 }
 
-div.contenedor-main p.aviso {
-    padding: 15px;
-    font-size: 14px;
-    background-color: #1d3d5f;
-    border-radius: 5px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-div.contenedor-turnos {
-    margin-top: 50px;
-    border-radius: 10px;
-    background-color: #238744;
-    padding: 20px 40px;
-    box-shadow: 15px 15px 0px -1px rgba(0, 0, 0, 0.75);
-}
-
-div.caja-thead {
+div.contenedor-perfil {
     display: flex;
+    justify-content: center;
+    gap: 90px;
     width: 100%;
-    justify-content: space-between;
-    padding: 6px;
-    border-bottom: 1px solid white;
+    margin: 90px 0;
 }
 
-div.caja-thead div {
-    color: white;
-    width: 10%;
-}
-
-div.caja-thead span {
-    font-size: 14px;
-    color: #d3d3d3;
-}
-
-div.caja-turno {
+div.caja-avatar {
+    width: 30%;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: transparent;
-    padding: 6px;
-    border-bottom: 1px solid #89bb99;
-    transition: all 0.1s ease-in-out;
 }
 
-div.caja-turno:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+div.caja-avatar img {
+    width: 250px;
+    height: 90%;
+    border-radius: 50%;
 }
 
-div.caja-turno div {
-    color: white;
-    width: 10%;
+div.caja-info {
+    width: 30%;
 }
 
-p.ningun-turno {
-    font-size: 14px;
-    text-align: center;
-    margin-top: 40px;
+div.caja-info h4 {
+    color: #092747;
+    margin-bottom: 30px;
 }
 
-div.caja-turno span {
-    font-size: 12px;
+div.caja-info p {
+    color: #092747;
+    font-size: 16px;
+    margin-bottom: 30px;
 }
 
-div.caja-turno span.span-estado {
-    background: #055c24;
-    padding: 4px;
-    border-radius: 3px;
+div.caja-botones {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 20px;
 }
 
-div.caja-turno button.boton-cancelar {
-    background-color: #004919;
-    outline: none;
-    border: none;
-    font-size: 12px;
-    padding: 8px;
+div.caja-botones button#boton-cerrarSesion {
     width: 80%;
-    text-align: center;
-    border-radius: 3px;
+    border: 1px solid #238744;
+    outline: none;
+    border-radius: 50px;
+    padding: 7px;
+    background-color: rgba(35, 135, 68, 0.4);
+    font-size: 14px;
+    color: black;
+    transition: all 0.3s ease-in-out;
 }
 
-div.caja-turno button.boton-cancelar:hover {
-    background-color: #042b11;
+div.caja-botones button#boton-eliminar {
+    width: 80%;
+    border: 1px solid red;
+    outline: none;
+    border-radius: 50px;
+    padding: 7px;
+    background-color: rgba(255, 0, 0, 0.2);
+    font-size: 14px;
+    color: black;
+    transition: all 0.3s ease-in-out;
 }
+
+div.caja-botones button#boton-cerrarSesion:hover {
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
+    transform: translateY(-7px);
+    background: #238744;
+    color: white;
+}
+
+div.caja-botones button#boton-eliminar:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
+    transform: translateY(-7px);
+}
+/**  main  **/
 
 /**  footer  **/
 footer div.contenedor-footer {

@@ -152,13 +152,14 @@ div.caja-registro input {
 }
 
 div.caja-registro input:hover {
-    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.7);
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.8);
     transform: translateY(-7px);
     cursor: pointer;
 }
 
 div.caja-registro input:focus {
     transform: translateY(-7px);
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.8);
     cursor: text;
 }
 
@@ -169,11 +170,12 @@ div.caja-registro input::placeholder {
 
 div.caja-registro input#inputAvatar {
     border: none;
+    padding: 6px;
 }
 
 input[type='file']::-webkit-file-upload-button {
     background: rgba(0, 73, 26, 0.5);
-    border: none;
+    border: 1px solid transparent;
     border-radius: 3px;
     outline: none;
     color: rgba(255, 255, 255, 0.3);
@@ -183,9 +185,9 @@ input[type='file']::-webkit-file-upload-button {
 
 input[type='file']::-webkit-file-upload-button:hover {
     cursor: pointer;
-    background-color: #238744;
+    border: 1px solid #238744;
     color: white;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 input[type='date']::-webkit-inner-spin-button,
@@ -204,6 +206,11 @@ div.caja-fecha svg {
     right: 10px;
     top: 60%;
     pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type='date']:hover ~ svg {
+    transform: translateY(-7px);
 }
 
 div.form p {
