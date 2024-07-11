@@ -230,7 +230,7 @@ div.caja-boton {
 }
 
 div.caja-boton button {
-    color: white;
+    color: black;
     border: 1px solid transparent;
     border-radius: 50px;
     outline: none;
@@ -246,6 +246,7 @@ div.caja-boton button:hover {
     box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
     transform: translateY(-7px);
     background: #004919;
+    color: white;
     opacity: 1;
 }
 /**  main  **/

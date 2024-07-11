@@ -247,14 +247,72 @@ div.imagen-izquiera img {
 
 /**  footer  **/
 footer div.contenedor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 35px 0 20px 0;
     background-color: #1d3d5f;
-    padding: 25px;
 }
 
-div.contenedor-footer p,
-div.contenedor-footer h3 {
-    margin: 0;
+div.contenedor-footer li {
+    list-style: none;
+    margin-bottom: 1px;
+}
+
+div.contenedor-footer li a {
+    text-decoration: none;
     color: white;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.contenedor-footer li a:hover {
+    color: #58a572;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+div.contenedor-footer div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.contenedor-footer div li p {
+    margin: 0;
+    color: lightblue;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+div.contenedor-footer div.caja-redes svg {
+    width: 16px;
+    color: white;
+    margin-left: 7px;
+    margin-bottom: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.contenedor-footer div.caja-redes li a:hover {
+    color: #58a572;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+div.contenedor-footer div.caja-redes li a:hover svg {
+    color: #58a572;
+    width: 18px;
+}
+
+div.contenedor-footer div.caja-copyright li p {
+    font-size: 12px;
+    font-weight: normal;
+    color: rgb(214, 210, 210);
+    font-style: italic;
+    margin: 0%;
+    text-decoration: none;
 }
 /**  footer  **/
 

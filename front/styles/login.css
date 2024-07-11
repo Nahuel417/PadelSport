@@ -174,10 +174,11 @@ div.caja-boton {
     width: 80%;
     margin-top: 25px;
     margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 div.caja-boton button {
-    color: white;
+    color: black;
     border: 1px solid transparent;
     border-radius: 50px;
     outline: none;
@@ -193,6 +194,7 @@ div.caja-boton button:hover {
     box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
     transform: translateY(-7px);
     background: #004919;
+    color: white;
     opacity: 1;
 }
 
@@ -236,45 +238,6 @@ div.cookie-recuerdame span a {
 div.cookie-recuerdame span a:hover {
     text-decoration: none;
 }
-
-/* hr.linea-form {
-    border-color: #004919;
-    width: 80%;
-    opacity: 0.8;
-}
-
-div.footer-form {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-top: 10px;
-}
-
-div.footer-form div {
-    font-size: 12px;
-}
-
-div.footer-form div.volver-home {
-    display: flex;
-    align-items: center;
-}
-
-div.footer-form div a {
-    color: white;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-}
-
-div.footer-form div.volver-home a:hover {
-    text-decoration: underline;
-}
-
-div.footer-form p,
-div.footer-form span {
-    font-style: italic;
-    margin: 0;
-    color: #d3d3d3;
-} */
 /**  main  **/
 
 /*?  MEDIA QUERIES  ?*/

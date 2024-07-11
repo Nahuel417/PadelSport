@@ -43,7 +43,7 @@ export const getAppointmentByIdService = async (id: number): Promise<Appointment
 
 export const cancelAppointmentService = async (id: number): Promise<Appointment> => {
     const appointment: Appointment | null = await AppointmentsModel.findOneBy({ id });
-    if (!appointment) throw Error('No se pudo encontrar el turno solicitado');
+    if (!appointment) throw Error('Turno inexistente.');
 
     appointment.status = 'canceled';
     await AppointmentsModel.save(appointment);

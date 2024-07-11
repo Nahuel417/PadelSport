@@ -121,14 +121,64 @@ div.contenedor-perfil {
 div.caja-avatar {
     width: 30%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
 }
 
-div.caja-avatar img {
-    width: 250px;
-    height: 90%;
+div.caja-avatar div.card {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
     border-radius: 50%;
+    border: none;
+    transition: all 0.4s ease-in-out;
+}
+
+div.card:hover {
+    transform: scale(1.03);
+}
+
+div.card a {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: none;
+}
+
+div.card a img {
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+div.card a div.card-img-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    background-color: black;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-out;
+}
+
+div.card a div.card-img-overlay p {
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+div.card a:hover > div.card-img-overlay {
+    opacity: 0.7;
+    visibility: visible;
 }
 
 div.caja-info {
@@ -165,6 +215,13 @@ div.caja-botones button#boton-cerrarSesion {
     transition: all 0.3s ease-in-out;
 }
 
+div.caja-botones button#boton-cerrarSesion:hover {
+    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
+    transform: translateY(-7px);
+    background: #238744;
+    color: white;
+}
+
 div.caja-botones button#boton-eliminar {
     width: 80%;
     border: 1px solid red;
@@ -177,13 +234,6 @@ div.caja-botones button#boton-eliminar {
     transition: all 0.3s ease-in-out;
 }
 
-div.caja-botones button#boton-cerrarSesion:hover {
-    box-shadow: 7px 7px 0px -1px rgba(0, 0, 0, 0.75);
-    transform: translateY(-7px);
-    background: #238744;
-    color: white;
-}
-
 div.caja-botones button#boton-eliminar:hover {
     background-color: red;
     color: white;
@@ -194,13 +244,73 @@ div.caja-botones button#boton-eliminar:hover {
 
 /**  footer  **/
 footer div.contenedor-footer {
-    margin-top: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 6%;
+    padding: 35px 0 20px 0;
     background-color: #1d3d5f;
-    padding: 25px;
 }
 
-div.contenedor-footer p {
+div.contenedor-footer li {
+    list-style: none;
+    margin-bottom: 1px;
+}
+
+div.contenedor-footer li a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.contenedor-footer li a:hover {
+    color: #58a572;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+div.contenedor-footer div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.contenedor-footer div li p {
     margin: 0;
+    color: lightblue;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+div.contenedor-footer div.caja-redes svg {
+    width: 16px;
+    color: white;
+    margin-left: 7px;
+    margin-bottom: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+div.contenedor-footer div.caja-redes li a:hover {
+    color: #58a572;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+div.contenedor-footer div.caja-redes li a:hover svg {
+    color: #58a572;
+    width: 18px;
+}
+
+div.contenedor-footer div.caja-copyright li p {
+    font-size: 12px;
+    font-weight: normal;
+    color: rgb(214, 210, 210);
+    font-style: italic;
+    margin: 0%;
+    text-decoration: none;
 }
 /**  footer  **/
 
