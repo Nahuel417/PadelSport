@@ -22,7 +22,7 @@ const CajaTurno = ({ turno: { asunto, fecha, horario, cancha, entrenador, status
             <div>
                 <span>{cancha}</span>
             </div>
-            <div>
+            <div className={`caja-spanEstado ${estado}`}>
                 <span className={`span-estado ${estado}`}>{estado}</span>
             </div>
             <div>

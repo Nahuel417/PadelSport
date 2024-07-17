@@ -5,7 +5,7 @@ interface IAppointments {
     horario: string;
     cancha: string;
     entrenador: string;
-    status: 'active' | 'canceled';
+    status: 'activo' | 'cancelado';
     userId: number;
 }
 

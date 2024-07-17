@@ -49,6 +49,8 @@ div.caja-thead {
 }
 
 div.caja-thead div {
+    display: flex;
+    justify-content: center;
     color: white;
     width: 10%;
 }
@@ -83,6 +85,8 @@ div.caja-turno:hover {
 }
 
 div.caja-turno div {
+    display: flex;
+    justify-content: center;
     color: white;
     width: 10%;
 }
@@ -95,18 +99,22 @@ p.ningun-turno {
 
 div.caja-turno span {
     font-size: 14px;
+    text-transform: capitalize;
 }
 
-div.caja-turno span.span-estado.activo {
-    background: #055c24;
-    padding: 4px;
-    border-radius: 3px;
+div.caja-turno div.caja-spanEstado {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 5px;
 }
 
-div.caja-turno span.span-estado.cancelado {
+div.caja-turno div.caja-spanEstado.activo {
+    background-color: #055c24;
+}
+
+div.caja-turno div.caja-spanEstado.cancelado {
     background: rgb(192, 78, 78);
-    padding: 4px;
-    border-radius: 3px;
 }
 
 div.caja-turno button.boton-cancelar {

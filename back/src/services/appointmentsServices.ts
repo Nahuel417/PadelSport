@@ -17,7 +17,7 @@ export const scheduleAppointmentService = async (appointment: appointmentsDto): 
         horario: appointment.horario,
         cancha: appointment.cancha,
         entrenador: appointment.entrenador,
-        status: 'active',
+        status: 'activo',
         user: user,
     });
     await AppointmentsModel.save(newAppointment);
@@ -45,7 +45,7 @@ export const cancelAppointmentService = async (id: number): Promise<Appointment>
     const appointment: Appointment | null = await AppointmentsModel.findOneBy({ id });
     if (!appointment) throw Error('Turno inexistente.');
 
-    appointment.status = 'canceled';
+    appointment.status = 'cancelado';
     await AppointmentsModel.save(appointment);
 
     return appointment;

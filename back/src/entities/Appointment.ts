@@ -22,7 +22,7 @@ export class Appointment {
     entrenador: string;
 
     @Column({ length: 20 })
-    status: 'active' | 'canceled';
+    status: 'activo' | 'cancelado';
 
     @ManyToOne(() => User, (user) => user.appointments)
     user: User;

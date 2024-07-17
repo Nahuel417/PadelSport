@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './MainMiHistorial.css';
-import misTurnos from '../../helpers/turnos';
 import CajaTurno from './CajaTurno';
 import CajaThead from './CajaThead';
+import axios from 'axios';
 
 const MainMiHistorial = () => {
-    const [turnos, setTurno] = useState(misTurnos);
+    const [turnos, setTurno] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get('http://localhost:3000/appointments')
+            .then((res) => setTurno(res.data))
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     return (
         <>
@@ -26,7 +35,7 @@ const MainMiHistorial = () => {
                                 return <CajaTurno key={turno.id} turno={turno} />;
                             })
                         ) : (
-                            <p class="ningun-turno">No se encontraron turnos realizados.</p>
+                            <p className="ningun-turno">No se encontraron turnos realizados.</p>
                         )}
                     </div>
                 </div>
