@@ -1,0 +1,156 @@
+/**  main  **/
+* {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+#main {
+    background-color: #d3d3d3;
+}
+
+div.contenedor-main-historial {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    min-height: 62.4vh;
+}
+
+div.contenedor-main-historial h3 {
+    color: #092747;
+}
+
+hr.linea-titulo {
+    border-color: #092747;
+    opacity: 0.8;
+}
+
+div.contenedor-main-historial p.aviso {
+    padding: 15px;
+    font-size: 16px;
+    background-color: #1d3d5f;
+    border-radius: 5px;
+}
+
+div.contenedor-turnos {
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: #238744;
+    padding: 20px 40px;
+    box-shadow: 15px 15px 0px -1px rgba(0, 0, 0, 0.75);
+}
+
+div.caja-thead {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 6px;
+    border-bottom: 1px solid white;
+}
+
+div.caja-thead div {
+    color: white;
+    width: 10%;
+}
+
+div.caja-thead span {
+    font-size: 16px;
+    color: #d3d3d3;
+}
+
+p.ningun-turno {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+div.caja-turno {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 6px;
+    border-bottom: 1px solid #89bb99;
+    transition: all 0.2s ease-in-out;
+}
+
+div.caja-turno:hover {
+    cursor: default;
+    transform: scale(1.015);
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+div.caja-turno div {
+    color: white;
+    width: 10%;
+}
+
+p.ningun-turno {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+div.caja-turno span {
+    font-size: 14px;
+}
+
+div.caja-turno span.span-estado.activo {
+    background: #055c24;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+div.caja-turno span.span-estado.cancelado {
+    background: rgb(192, 78, 78);
+    padding: 4px;
+    border-radius: 3px;
+}
+
+div.caja-turno button.boton-cancelar {
+    background-color: #004919;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    padding: 8px;
+    width: 80%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+div.caja-turno button.boton-cancelado {
+    background-color: #004919;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    padding: 8px;
+    width: 80%;
+    text-align: center;
+    border-radius: 3px;
+    opacity: 0.5;
+}
+
+div.caja-turno button.boton-cancelado:hover {
+    cursor: not-allowed;
+}
+
+div.caja-turno button.boton-cancelar:hover {
+    background-color: #042b11;
+}
+/**  main  **/
+
+/*?  MEDIA QUERIES  ?*/
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}
+/*?  MEDIA QUERIES  ?*/
