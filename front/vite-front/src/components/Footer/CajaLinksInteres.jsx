@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CajaLinksInteres = () => {
     return (
@@ -7,18 +8,18 @@ const CajaLinksInteres = () => {
                 <p>LINKS DE INTERÉS</p>
             </li>
             <li>
-                <a href="./views/about.html">Acerca de Nosotros</a>
+                <Link to="/about">Acerca de Nosotros</Link>
             </li>
             <li>
-                <a href="https://policies.google.com/privacy?hl=es" target="_blank">
+                <Link to="https://policies.google.com/privacy?hl=es" target="_blank">
                     Politicas de Privacidad
-                </a>
+                </Link>
             </li>
             <li>
-                <a href="">Politicas de Reembolso</a>
+                <Link to="">Politicas de Reembolso</Link>
             </li>
             <li>
-                <a href="">¿Necesitas ayuda?</a>
+                <Link to="">¿Necesitas ayuda?</Link>
             </li>
         </div>
     );

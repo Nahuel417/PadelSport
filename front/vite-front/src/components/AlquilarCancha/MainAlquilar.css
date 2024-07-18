@@ -14,8 +14,8 @@ div.contenedor-main-alquilar {
     justify-content: center;
     width: 60%;
     margin: auto;
-    margin-bottom: 30px;
-    min-height: 66.2vh;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 div.contenedor-main-alquilar h3 {

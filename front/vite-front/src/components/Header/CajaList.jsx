@@ -1,18 +1,20 @@
+import { Link } from 'react-router-dom';
+
 const CajaList = () => {
     return (
         <div className="caja-ul">
             <ul>
                 <li>
-                    <a href="./index.html"> Home </a>
+                    <Link to="/"> Home </Link>
                 </li>
                 <li>
-                    <a href="./views/misTurnos.html"> Mi Historial </a>
+                    <Link to="/historial"> Mi Historial </Link>
                 </li>
                 <li>
-                    <a href="./views/sacarTurno.html"> Alquilar Cancha </a>
+                    <Link to="/alquilar-cancha"> Alquilar Cancha </Link>
                 </li>
                 <li>
-                    <a href="#contacto"> Contacto </a>
+                    <Link to="/about"> About </Link>
                 </li>
             </ul>
         </div>

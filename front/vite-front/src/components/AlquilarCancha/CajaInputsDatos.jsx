@@ -25,11 +25,19 @@ const CajaInputsDatos = ({ label }) => {
                             - -
                         </option>
                         {label === 'Cancha'
-                            ? misCanchas.map((cancha) => {
-                                  return <option value={cancha}>{cancha}</option>;
+                            ? misCanchas.map((cancha, index) => {
+                                  return (
+                                      <option value={cancha} key={index}>
+                                          {cancha}
+                                      </option>
+                                  );
                               })
-                            : misEntrenadores.map((entrenador) => {
-                                  return <option value={entrenador}>{entrenador}</option>;
+                            : misEntrenadores.map((entrenador, index) => {
+                                  return (
+                                      <option value={entrenador} key={index}>
+                                          {entrenador}
+                                      </option>
+                                  );
                               })}
                     </select>
                 )}

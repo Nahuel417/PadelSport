@@ -6,17 +6,13 @@ import CajaAsunto from './CajaAsunto';
 const InputsAlquilar = () => {
     const [label, setLabel] = useState(labels);
 
-    let id = 0;
-
     return (
         <div className="caja-inputs" id="caja-inputs">
-            <div className="caja-asunto">
-                <CajaAsunto />
-            </div>
+            <CajaAsunto />
 
             <div className="caja-datos" id="caja-datos">
-                {label.map((label) => {
-                    return <CajaInputsDatos key={id++} label={label} />;
+                {label.map((label, index) => {
+                    return <CajaInputsDatos key={index} label={label} />;
                 })}
             </div>
 
