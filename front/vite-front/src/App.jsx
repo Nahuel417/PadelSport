@@ -22,7 +22,7 @@ const App = () => {
                 <Route path="/about" element={<About />} />
                 {/* <Route path="*" element={<Error404 />} /> */}
 
-                {/* <Route path="" element={<Ejemplo />} /> */}
+                <Route path="" element={<Ejemplo />} />
             </Routes>
         </BrowserRouter>
     );
