@@ -9,9 +9,7 @@ const MainLogin = () => {
                     <h3>Iniciar Sesión</h3>
                     <hr className="linea-titulo" />
 
-                    <form action="./login.html" id="form">
-                        <CajaFormLogin />
-                    </form>
+                    <CajaFormLogin />
                 </div>
             </main>
         </>

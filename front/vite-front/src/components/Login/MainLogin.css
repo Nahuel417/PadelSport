@@ -89,7 +89,7 @@ div.caja-login span.span-correo,
 div.caja-login span.span-contrasenia {
     color: rgba(255, 255, 255, 0.3);
     position: absolute;
-    top: 55%;
+    top: 40%;
     left: 2%;
     transform: translateY(-50%);
     font-size: 16px;
@@ -110,6 +110,14 @@ div.caja-login input:valid ~ span.span-contrasenia {
     top: -14px;
     left: 4px;
     color: white;
+}
+
+div.caja-login p.feedback-negativo {
+    font-size: 14px;
+    height: 14px;
+    margin: 5px 0 0 0;
+    font-style: italic;
+    color: #032910;
 }
 
 div.caja-boton-login {

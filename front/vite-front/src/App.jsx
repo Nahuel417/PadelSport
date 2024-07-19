@@ -5,7 +5,7 @@ import Login from './views/Login';
 import Registro from './views/Registro';
 import Perfil from './views/Perfil';
 import About from './views/About';
-import Ejemplo from './components/EjemploUseEffect/Ejemplo';
+// import Ejemplo from './components/EjemploUseEffect/Ejemplo';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const App = () => {
                 <Route path="/about" element={<About />} />
                 {/* <Route path="*" element={<Error404 />} /> */}
 
-                <Route path="" element={<Ejemplo />} />
+                {/* <Route path="" element={<Ejemplo />} /> */}
             </Routes>
         </BrowserRouter>
     );

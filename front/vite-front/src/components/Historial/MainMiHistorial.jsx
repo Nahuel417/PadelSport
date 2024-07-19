@@ -7,13 +7,16 @@ import axios from 'axios';
 const MainMiHistorial = () => {
     const [turnos, setTurno] = useState([]);
 
+    const fetchData = async () => {
+        try {
+            await axios.get('http://localhost:3000/appointments').then((res) => setTurno(res.data));
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     useEffect(() => {
-        axios
-            .get('http://localhost:3000/appointments')
-            .then((res) => setTurno(res.data))
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
+        fetchData();
     }, []);
 
     return (
