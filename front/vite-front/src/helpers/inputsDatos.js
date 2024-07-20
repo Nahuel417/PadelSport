@@ -1,12 +1,12 @@
 const labels = ['Dia', 'Horario', 'Cancha', 'Entrenador'];
 
-const labelsRegistro2 = ['Apellido', 'Contraseña', 'Avatar'];
+const labelsRegistro2 = ['apellido', 'email', 'Confirmar Contraseña'];
 
-const labelsRegistro1 = ['Nombre', 'Email', 'Fecha de Nacimiento'];
+const labelsRegistro1 = ['nombre', 'Fecha de Nacimiento', 'contraseña'];
 
 const canchas = ['Cancha 1', 'Cancha 2', 'Cancha 3', 'Cancha 4'];
 
-const entrenadores = ['Alonso Corvalán', 'Nahuel Banco', 'Pedro Corvalán'];
+const entrenadores = ['Alonso Corvalán', 'Nahuel Banco', 'Pedro Corvalán', 'Valentina Romero'];
 
 const asuntos = ['Jugar', 'Entrenar'];
 

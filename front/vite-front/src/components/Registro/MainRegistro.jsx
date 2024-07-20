@@ -9,11 +9,7 @@ const MainRegistro = () => {
                     <h3>Formulario de registro</h3>
                     <hr className="linea-titulo" />
 
-                    <form action="./login.html" id="form">
-                        <div className="form-registro">
-                            <CajaFormRegistro />
-                        </div>
-                    </form>
+                    <CajaFormRegistro />
                 </div>
             </main>
         </>

@@ -1,9 +1,9 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { validateLogin } from '../../helpers/validations';
 import axios from 'axios';
 
 const CajaFormLogin = () => {
-    const postFunction = async (formData) => {
+    const postFunctionLogin = async (formData) => {
         try {
             await axios.post('http://localhost:3000/users/login', formData);
             alert('enviado al back');
@@ -21,11 +21,11 @@ const CajaFormLogin = () => {
                 }}
                 validate={validateLogin}
                 onSubmit={(valores, { resetForm }) => {
-                    postFunction(valores);
+                    postFunctionLogin(valores);
                     resetForm();
                 }}>
                 {({ errors }) => (
-                    <Form action="./login.html" id="form">
+                    <Form action="" id="form">
                         <div className="contendor-form" id="contendor-form">
                             <div className="caja-login" id="caja-login">
                                 <Field type="text" name="email" id="inputEmail" required />

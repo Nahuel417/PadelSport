@@ -6,12 +6,13 @@ import { createCredentialService } from './credentialsServices';
 
 export const registerUserService = async (usuario: userDto): Promise<User> => {
     const credenciales: Credential = await createCredentialService(usuario.email, usuario.password);
+    const avatarDefault = 'https://w7.pngwing.com/pngs/627/693/png-transparent-computer-icons-user-user-icon-thumbnail.png';
 
     const newUser: User = await UserModel.create({
         name: usuario.name,
         last_name: usuario.last_name,
         birthday: usuario.birthday,
-        avatar: usuario.avatar,
+        avatar: avatarDefault,
         credentials: credenciales,
     });
 

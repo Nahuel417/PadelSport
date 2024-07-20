@@ -25,7 +25,7 @@ const EditarAvatar = ({ handleOnClose }) => {
                 <input type="file" name="nuevoAvatar" className="nuevoAvatar" required />
                 <span className="feedback-negativo" id="feedback-negativo"></span>
                 <div className="caja-botones-avatar">
-                    <button type="submit"> Guargar </button>
+                    <button type="submit"> Guardar </button>
                     <button onClick={handleClose} className="cerrar">
                         Cerrar
                     </button>

@@ -7,7 +7,13 @@ import { User } from '../entities/User';
 export const registerUserController = async (req: Request, res: Response) => {
     try {
         const newUser: User = await registerUserService(req.body);
-        res.status(201).json(newUser);
+
+        const register = {
+            register: 'El nuevo usuario fue registrado con exito',
+            user: newUser,
+        };
+
+        res.status(201).json(register);
     } catch (error: any) {
         res.status(400).json({ error: error.message });
     }
