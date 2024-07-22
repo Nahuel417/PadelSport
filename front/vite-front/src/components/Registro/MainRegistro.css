@@ -33,6 +33,10 @@ div.form-registro {
     box-shadow: 15px 15px 0px -1px rgba(0, 0, 0, 0.75);
 }
 
+div.form-registro p.campos-obligatorios {
+    font-style: italic;
+}
+
 div.contendor-form-registro {
     display: flex;
     justify-content: space-between;
@@ -132,7 +136,6 @@ input[type='date']:hover ~ svg {
 div.form-registro p {
     color: #d3d3d3;
     font-size: 14px;
-    font-style: italic;
     letter-spacing: 1px;
     padding: 5px;
     margin: 0px 40px 5px 40px;
@@ -143,7 +146,6 @@ div.form-registro p.feedback-negativo {
     font-size: 14px;
     height: 14px;
     margin: 5px 0 0 0;
-    font-style: italic;
     color: rgb(175, 4, 4);
 }
 

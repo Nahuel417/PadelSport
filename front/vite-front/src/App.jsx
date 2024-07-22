@@ -7,11 +7,11 @@ import Perfil from './views/Perfil';
 import About from './views/About';
 // import Ejemplo from './components/EjemploUseEffect/Ejemplo';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/historial" element={<Historial />} />
@@ -24,7 +24,7 @@ const App = () => {
 
                 {/* <Route path="" element={<Ejemplo />} /> */}
             </Routes>
-        </BrowserRouter>
+        </>
     );
 };
 

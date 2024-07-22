@@ -3,6 +3,7 @@ import CajaLabelRegistro from './CajaLabelRegistro';
 import { useState } from 'react';
 import { labelsRegistro1, labelsRegistro2 } from '../../helpers/inputsDatos';
 import { validateRegister } from '../../helpers/validations';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const CajaFormRegistro = () => {
@@ -18,6 +19,8 @@ const CajaFormRegistro = () => {
         }
     };
 
+    const navigate = useNavigate();
+
     return (
         <>
             <Formik
@@ -30,9 +33,9 @@ const CajaFormRegistro = () => {
                     birthday: '',
                 }}
                 validate={validateRegister}
-                onSubmit={(valores, { resetForm }) => {
+                onSubmit={(valores) => {
                     postFunctionRegister(valores);
-                    resetForm();
+                    navigate('/login');
                 }}>
                 {({ errors }) => (
                     <Form action="" id="form">
@@ -56,7 +59,7 @@ const CajaFormRegistro = () => {
                                     })}
                                 </div>
                             </div>
-                            <p>* Todos los cambios son obligatorios</p>
+                            <p className="campos-obligatorios">* Todos los cambios son obligatorios</p>
 
                             <div className="caja-boton-registro">
                                 <button type="submit" className="boton-registro">

@@ -1,5 +1,6 @@
 import { Formik, Form, Field } from 'formik';
 import { validateLogin } from '../../helpers/validations';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const CajaFormLogin = () => {
@@ -12,6 +13,8 @@ const CajaFormLogin = () => {
         }
     };
 
+    const navigate = useNavigate();
+
     return (
         <>
             <Formik
@@ -20,9 +23,9 @@ const CajaFormLogin = () => {
                     password: '',
                 }}
                 validate={validateLogin}
-                onSubmit={(valores, { resetForm }) => {
+                onSubmit={(valores) => {
                     postFunctionLogin(valores);
-                    resetForm();
+                    navigate('/');
                 }}>
                 {({ errors }) => (
                     <Form action="" id="form">

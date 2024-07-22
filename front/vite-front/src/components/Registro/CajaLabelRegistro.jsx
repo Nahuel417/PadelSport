@@ -1,8 +1,6 @@
 import { ErrorMessage, Field } from 'formik';
 
 const CajaLabelRegistro = ({ label, errores }) => {
-    console.log(errores);
-
     return (
         <>
             <div className="caja-registro" id="caja-registro">
