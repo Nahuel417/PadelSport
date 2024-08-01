@@ -42,6 +42,9 @@ const NavbarPhone = ({ handleCerrar }) => {
                     <Link to="/contacto"> Contacto </Link>
                 </li>
                 <li>
+                    <Link to="/about"> About </Link>
+                </li>
+                <li>
                     {userActive !== null ? (
                         <Link to="/mi-perfil"> Perfil </Link>
                     ) : ruta.pathname === '/login' ? (

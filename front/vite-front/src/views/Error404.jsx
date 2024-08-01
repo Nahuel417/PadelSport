@@ -1,15 +1,15 @@
-import MainAbout from '../components/About/MainAbout';
+import MainError404 from '../components/Error404/MainError404';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 
-const About = () => {
+const Error404 = () => {
     return (
         <>
             <Header />
-            <MainAbout />
+            <MainError404 />
             <Footer />
         </>
     );
 };
 
-export default About;
+export default Error404;

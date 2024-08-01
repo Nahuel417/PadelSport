@@ -6,6 +6,7 @@ import Registro from './views/Registro';
 import Perfil from './views/Perfil';
 import About from './views/About';
 import Contacto from './views/Contacto';
+import Error404 from './views/Error404';
 // import Ejemplo from './components/EjemploUseEffect/Ejemplo';
 
 import { Route, Routes } from 'react-router-dom';
@@ -22,7 +23,7 @@ const App = () => {
                 <Route path="/mi-perfil" element={<Perfil />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contacto" element={<Contacto />} />
-                {/* <Route path="*" element={<Error404 />} /> */}
+                <Route path="*" element={<Error404 />} />
 
                 {/* <Route path="" element={<Ejemplo />} /> */}
             </Routes>

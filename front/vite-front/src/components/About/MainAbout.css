@@ -1,0 +1,27 @@
+/**  main  **/
+* {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+#main {
+    background-color: #d3d3d3;
+}
+
+div.contenedor-main-about {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+div.contenedor-main-about h3 {
+    color: #092747;
+}
+
+hr.linea-titulo {
+    border-color: #092747;
+    opacity: 0.8;
+}
+/**  main  **/

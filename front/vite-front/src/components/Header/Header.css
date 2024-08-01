@@ -57,11 +57,9 @@ div.caja-ul ul {
     list-style: none;
 }
 
-/* div.caja-ul ul.ul-phone {
+div.caja-ul div.ul-phone {
     display: none;
-    opacity: 0;
-    visibility: hidden;
-} */
+}
 
 div.caja-ul ul li {
     font-size: 16px;
@@ -179,7 +177,7 @@ div.caja-sesion:hover {
     }
 
     div.caja-logo a img {
-        height: 80px;
+        height: 75px;
     }
 
     div.caja-ul {

@@ -96,3 +96,19 @@ export const validateAlquilarCancha = (valores) => {
 
     return errores;
 };
+
+//! Validaciones del Contacto
+export const validateContact = (valores) => {
+    let errores = {};
+
+    //* email */
+    const isEmail = /^.+@.+\..+$/;
+    if (!valores.email) errores.email = 'Debe ingresar un email';
+    else if (!isEmail.test(valores.email)) errores.email = 'Debe ingresar un email valido';
+
+    //* message */
+    if (!valores.message) errores.message = 'Debe ingresar un mensaje';
+    else if (valores.message.length <= 10) errores.message = 'El mensaje debe tener al menos 10 caracteres';
+
+    return errores;
+};
