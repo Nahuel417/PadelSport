@@ -44,7 +44,7 @@ export const getUserByIdService = async (id: number): Promise<User> => {
         },
         order: {
             appointments: {
-                id: 'ASC', // Ordena las turnos en orden ascendente
+                id: 'ASC',
             },
         },
     });
