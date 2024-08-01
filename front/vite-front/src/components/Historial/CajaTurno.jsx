@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { editUserAppointment } from '../../redux/reducer';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
-const CajaTurno = ({ turno: { asunto, fecha, horario, cancha, entrenador, status } }) => {
+const CajaTurno = ({ turno: { id, asunto, fecha, horario, cancha, entrenador, status } }) => {
     const [estado, setEstado] = useState(status);
+    const dispatch = useDispatch();
+
+    const postFunctionLogin = async () => {
+        try {
+            const response = await axios.put(`http://localhost:3000/appointments/cancel/${id}`);
+            const appointmentData = response.data;
+
+            dispatch(editUserAppointment({ id: appointmentData.id, status: 'cancelado' }));
+            setEstado('cancelado');
+        } catch (error) {
+            console.log(error);
+            alert('No se puedo cancelar el turno');
+        }
+    };
 
     const cambiarEstado = () => {
-        if (status === 'activo') setEstado('cancelado');
-        return;
+        if (confirm('¿Desea cancelar el turno?') && status === 'activo') {
+            postFunctionLogin();
+        }
     };
 
     return (
@@ -25,7 +43,7 @@ const CajaTurno = ({ turno: { asunto, fecha, horario, cancha, entrenador, status
             <div className={`caja-spanEstado ${estado}`}>
                 <span className={`span-estado ${estado}`}>{estado}</span>
             </div>
-            <div>
+            <div className="caja-entrenador">
                 <span>{entrenador}</span>
             </div>
             <div>

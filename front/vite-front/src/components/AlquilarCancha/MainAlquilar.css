@@ -46,6 +46,13 @@ div.caja-inputs {
     box-shadow: 15px 15px 0px -1px rgba(0, 0, 0, 0.75);
 }
 
+div.caja-inputs p.feedback-negativo {
+    font-size: 14px;
+    height: 14px;
+    margin: 8px 0 0 5px;
+    color: rgb(175, 4, 4);
+}
+
 div.caja-inputs label {
     font-size: 18px;
     color: white;

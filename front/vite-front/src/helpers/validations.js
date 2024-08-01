@@ -1,3 +1,4 @@
+//! Validaciones del Login
 export const validateLogin = (valores) => {
     let errores = {};
 
@@ -18,6 +19,7 @@ export const validateLogin = (valores) => {
     return errores;
 };
 
+//! Validaciones del Register
 export const validateRegister = (valores) => {
     let errores = {};
 
@@ -60,6 +62,37 @@ export const validateRegister = (valores) => {
 
     if (!valores.birthday) errores.birthday = 'Debe ingresar una fecha';
     else if (fechaIngresada < fechaMinima || fechaIngresada > fechaActual) errores.birthday = 'El año debe ser mayor a 1900 y menor a 2024';
+
+    return errores;
+};
+
+//! Validaciones del alquilar
+export const validateAlquilarCancha = (valores) => {
+    let errores = {};
+
+    //* asunto */
+    if (!valores.asunto) errores.asunto = 'Debe seleccionar un asunto';
+
+    //* date */
+    const fechaActual = new Date().toISOString().split('T')[0];
+    const fechaIngresada = valores.fecha;
+
+    if (!valores.fecha) errores.fecha = 'Debe ingresar un dia';
+    else if (fechaActual >= fechaIngresada) errores.fecha = 'No se puede elegir un dia pasado';
+
+    //* time */
+    const horaIngresada = valores.horario;
+    const horaInicio = '15:00';
+    const horaFinal = '23:00';
+
+    if (!valores.horario) errores.horario = 'Debe ingresar un horario';
+    else if (horaIngresada < horaInicio || horaIngresada > horaFinal) errores.horario = 'La hora debe ser entre las 15:00hs y 23:00hs';
+
+    //* cancha */
+    if (!valores.cancha) errores.cancha = 'Debe ingresar un cancha';
+
+    //* entrenador */
+    if (valores.asunto !== 'Jugar' && (!valores.entrenador || valores.entrenador === '- -')) errores.entrenador = 'Debe seleccionar un entrenador';
 
     return errores;
 };

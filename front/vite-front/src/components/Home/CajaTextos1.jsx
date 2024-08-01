@@ -26,7 +26,7 @@ const CajaTextos1 = () => {
                 </p>
             </div>
             <div className="imagen-derecha">
-                <img src="https://blog.sportotal.com.ar/wp-content/uploads/2022/08/reglas-del-padel.jpeg" alt="" />
+                <img src="https://media.gq.com.mx/photos/660b0d51a1f2991fdd335050/16:9/w_2560%2Cc_limit/Pa%25CC%2581del_1080225792.jpg" alt="" />
             </div>
         </div>
     );

@@ -11,7 +11,7 @@
 div.contenedor-main-historial {
     width: 60%;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     margin-top: 40px;
     min-height: 62.4vh;
 }
@@ -52,7 +52,7 @@ div.caja-thead div {
     display: flex;
     justify-content: center;
     color: white;
-    width: 10%;
+    width: 12%;
 }
 
 div.caja-thead span {
@@ -88,7 +88,7 @@ div.caja-turno div {
     display: flex;
     justify-content: center;
     color: white;
-    width: 10%;
+    width: 12%;
 }
 
 p.ningun-turno {
@@ -100,6 +100,10 @@ p.ningun-turno {
 div.caja-turno span {
     font-size: 14px;
     text-transform: capitalize;
+}
+
+div.caja-turno div.caja-entrenador {
+    text-align: center;
 }
 
 div.caja-turno div.caja-spanEstado {
@@ -119,7 +123,7 @@ div.caja-turno div.caja-spanEstado.cancelado {
 }
 
 div.caja-turno button.boton-cancelar {
-    background-color: #004919;
+    background-color: rgba(0, 0, 0, 0.6);
     outline: none;
     border: none;
     font-size: 14px;
@@ -153,10 +157,56 @@ div.caja-turno button.boton-cancelado:hover {
 /**  main  **/
 
 /*?  MEDIA QUERIES  ?*/
+@media (max-width: 1500px) {
+    div.contenedor-main-historial {
+        width: 65%;
+    }
+
+    div.caja-turno div {
+        width: 15%;
+    }
+
+    div.contenedor-turnos {
+        padding: 20px 20px;
+    }
+
+    div.caja-thead {
+        justify-content: space-around;
+        padding: 6px 0;
+    }
+}
+
 @media (max-width: 1200px) {
+    div.contenedor-main-historial {
+        width: 75%;
+    }
+
+    div.caja-turno {
+        padding: 6px 0;
+    }
+
+    div.caja-turno div.caja-entrenador {
+        padding: 2px;
+    }
+
+    div.caja-thead span {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 992px) {
+    div.contenedor-main-historial {
+        width: 90%;
+    }
+
+    div.caja-turno button.boton-cancelar,
+    div.caja-turno button.boton-cancelado {
+        padding: 8px 4px;
+    }
+
+    div.caja-turno div.caja-spanEstado.activo {
+        padding: 8px 6px;
+    }
 }
 
 @media (max-width: 768px) {

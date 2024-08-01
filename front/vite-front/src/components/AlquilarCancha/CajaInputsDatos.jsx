@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { canchas, entrenadores } from '../../helpers/inputsDatos';
+import { ErrorMessage, Field } from 'formik';
 
-const CajaInputsDatos = ({ label }) => {
+const CajaInputsDatos = ({ label, errores, valores, setFieldValue }) => {
     const [misCanchas, setMisCancha] = useState(canchas);
     const [misEntrenadores, setMisEntrenadores] = useState(entrenadores);
 
@@ -11,6 +12,12 @@ const CajaInputsDatos = ({ label }) => {
         else if (label === 'Cancha' || label === 'Entrenador') return 'select';
     };
 
+    useEffect(() => {
+        if (valores.asunto === 'Jugar') {
+            setFieldValue('entrenador', '- -');
+        }
+    }, [valores.asunto, setFieldValue]);
+
     return (
         <div className="caja-inputsDatos">
             <div className="caja-label">
@@ -18,10 +25,10 @@ const CajaInputsDatos = ({ label }) => {
             </div>
             <div className="caja-select">
                 {tipoInput(label) !== 'select' ? (
-                    <input type={tipoInput(label)} />
+                    <Field type={tipoInput(label)} name={tipoInput(label) === 'date' ? 'fecha' : 'horario'} />
                 ) : (
-                    <select name={label}>
-                        <option value="" selected>
+                    <Field as="select" name={label.toLocaleLowerCase()}>
+                        <option value="" disabled={label === 'Cancha' || valores.asunto === ''} selected>
                             - -
                         </option>
                         {label === 'Cancha'
@@ -34,18 +41,31 @@ const CajaInputsDatos = ({ label }) => {
                               })
                             : misEntrenadores.map((entrenador, index) => {
                                   return (
-                                      <option value={entrenador} key={index}>
+                                      <option value={entrenador} key={index} disabled={valores.asunto === 'Jugar'}>
                                           {entrenador}
                                       </option>
                                   );
                               })}
-                    </select>
+                    </Field>
                 )}
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down-square-fill" viewBox="0 0 16 16">
                     <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6z" />
                 </svg>
             </div>
+
+            {JSON.stringify(errores) === undefined ? (
+                <p className="feedback-negativo" id="feedback-negativo"></p>
+            ) : (
+                <ErrorMessage
+                    name={label === 'Dia' ? 'fecha' : label === 'Horario' ? 'horario' : label === 'Entrenador' ? 'entrenador' : 'cancha'}
+                    component={() => (
+                        <p className="feedback-negativo" id="feedback-negativo">
+                            {errores}
+                        </p>
+                    )}
+                />
+            )}
         </div>
     );
 };

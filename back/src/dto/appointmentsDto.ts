@@ -1,6 +1,6 @@
 interface appointmentsDto {
     asunto: string;
-    dia: string;
+    fecha: string;
     horario: string;
     cancha: string;
     entrenador: string;

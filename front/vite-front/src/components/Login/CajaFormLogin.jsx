@@ -1,19 +1,27 @@
 import { Formik, Form, Field } from 'formik';
 import { validateLogin } from '../../helpers/validations';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUserActive } from '../../redux/reducer';
 import axios from 'axios';
 
 const CajaFormLogin = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const postFunctionLogin = async (formData) => {
         try {
-            await axios.post('http://localhost:3000/users/login', formData);
-            alert('enviado al back');
+            const response = await axios.post('http://localhost:3000/users/login', formData);
+            const userData = response.data.user;
+
+            if (response.data.login) {
+                dispatch(addUserActive(userData));
+                navigate('/mi-perfil');
+            }
         } catch (error) {
-            console.log(error);
+            alert(error.response.data.error);
         }
     };
-
-    const navigate = useNavigate();
 
     return (
         <>
@@ -25,7 +33,6 @@ const CajaFormLogin = () => {
                 validate={validateLogin}
                 onSubmit={(valores) => {
                     postFunctionLogin(valores);
-                    navigate('/');
                 }}>
                 {({ errors }) => (
                     <Form action="" id="form">

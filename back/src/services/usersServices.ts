@@ -41,7 +41,11 @@ export const getUserByIdService = async (id: number): Promise<User> => {
             birthday: true,
             avatar: true,
             credentials: { email: true, password: true },
-            appointments: { id: true, fecha: true, horario: true, status: true },
+        },
+        order: {
+            appointments: {
+                id: 'ASC', // Ordena las turnos en orden ascendente
+            },
         },
     });
 

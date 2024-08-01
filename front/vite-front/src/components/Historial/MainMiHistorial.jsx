@@ -1,23 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import './MainMiHistorial.css';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { userAppointments } from '../../redux/reducer';
 import CajaTurno from './CajaTurno';
 import CajaThead from './CajaThead';
 import axios from 'axios';
+import './MainMiHistorial.css';
 
 const MainMiHistorial = () => {
-    const [turnos, setTurno] = useState([]);
+    const allUserAppointments = useSelector((state) => state.userData.userAppointments);
+    const [turnos, setTurnos] = useState([]);
+    const userActive = useSelector((state) => state.userData.userActive);
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const fetchData = async () => {
         try {
-            await axios.get('http://localhost:3000/appointments').then((res) => setTurno(res.data));
+            await axios.get(`http://localhost:3000/users/${userActive.user.id}`).then((res) => setTurnos(res.data.appointments));
         } catch (error) {
             console.log(error);
         }
     };
 
+    // useEffect para la peticion al back
     useEffect(() => {
-        fetchData();
-    }, []);
+        if (userActive !== null) {
+            fetchData();
+        } else {
+            navigate('/login');
+        }
+    }, [userActive, navigate]);
+
+    // useEffect para despachar los turnos
+    useEffect(() => {
+        dispatch(userAppointments(turnos));
+    }, [dispatch, turnos]);
 
     return (
         <>
@@ -33,8 +51,8 @@ const MainMiHistorial = () => {
                     <div className="contenedor-turnos" id="contenedor-turnos">
                         <CajaThead />
 
-                        {turnos?.length ? (
-                            turnos.map((turno) => {
+                        {allUserAppointments?.length ? (
+                            allUserAppointments.map((turno) => {
                                 return <CajaTurno key={turno.id} turno={turno} />;
                             })
                         ) : (

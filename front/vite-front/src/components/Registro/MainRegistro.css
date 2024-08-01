@@ -124,7 +124,7 @@ div.caja-registro div label {
 div.caja-fecha svg {
     position: absolute;
     right: 10px;
-    top: 60%;
+    top: 50%;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
 }
@@ -178,15 +178,88 @@ div.caja-boton-registro button:hover {
 /**  main  **/
 
 /*?  MEDIA QUERIES  ?*/
+@media (max-width: 1500px) {
+    div.contenedor-main-registro {
+        width: 70%;
+    }
+}
+
 @media (max-width: 1200px) {
+    div.contenedor-main-registro {
+        width: 80%;
+    }
 }
 
 @media (max-width: 992px) {
+    div.contenedor-main-registro {
+        width: 90%;
+        padding: 10px;
+    }
+
+    div.contenedor-main-registro h3 {
+        font-size: 24px;
+    }
+
+    div.caja-registro div label {
+        font-size: 14px;
+    }
+
+    div.caja-registro input {
+        font-size: 14px;
+    }
+
+    div.form-registro p {
+        font-size: 12px;
+    }
+
+    div.caja-boton-registro button {
+        font-size: 14px;
+    }
+
+    div.form-registro p.feedback-negativo {
+        font-size: 12px;
+        height: 12px;
+    }
 }
 
 @media (max-width: 768px) {
+    div.contenedor-main-registro {
+        width: 80%;
+    }
+
+    div.contendor-form-registro {
+        flex-direction: column;
+    }
+
+    div.caja-inputs-1,
+    div.caja-inputs-2 {
+        width: 100%;
+        padding-top: 0;
+        margin-top: 20px;
+    }
+
+    div.caja-inputs-1 {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    div.caja-inputs-2 {
+        margin-top: 0;
+    }
+
+    div.caja-registro {
+        margin-bottom: 10px;
+    }
+
+    div.form-registro p.feedback-negativo {
+        font-size: 12px;
+        height: 12px;
+    }
 }
 
 @media (max-width: 480px) {
+    div.contenedor-main-registro {
+        width: 90%;
+    }
 }
 /*?  MEDIA QUERIES  ?*/

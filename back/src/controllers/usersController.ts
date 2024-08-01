@@ -47,7 +47,7 @@ export const loginUserController = async (req: Request, res: Response) => {
 
         const login = {
             login: true,
-            user: credenciales.user,
+            user: credenciales,
         };
 
         res.status(200).json(login);

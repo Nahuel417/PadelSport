@@ -1,8 +1,19 @@
-import React from 'react';
-import './MainAlquilar.css';
+import React, { useEffect } from 'react';
 import InputsAlquilar from './InputsAlquilar';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import './MainAlquilar.css';
 
 const Main = () => {
+    const userActive = useSelector((state) => state.userData.userActive);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (userActive === null) {
+            navigate('/login');
+        }
+    }, [userActive, navigate]);
+
     return (
         <>
             <main id="main">
@@ -14,9 +25,7 @@ const Main = () => {
                         Complete el siguiente formulario para alquilar una cancha. <b>Recuerde que el horario para hacerlo es de 15:00hs a 23:00hs.</b>
                     </p>
 
-                    <form action="">
-                        <InputsAlquilar />
-                    </form>
+                    <InputsAlquilar user={userActive !== null ? userActive.user : ''} />
                 </div>
             </main>
         </>
