@@ -20,8 +20,12 @@ const InputsAlquilar = ({ user }) => {
             const appointmentData = response.data;
             dispatch(addUserAppointments(appointmentData));
         } catch (error) {
-            console.log(error);
-            alert('no se creo el turno');
+            swal({
+                title: '¡Error!',
+                text: error.response.data.error,
+                icon: 'error',
+                button: 'Aceptar',
+            });
         }
     };
 
@@ -40,8 +44,13 @@ const InputsAlquilar = ({ user }) => {
                 onSubmit={(valores, { resetForm }) => {
                     resetForm();
                     functionSchedule(valores);
+                    swal({
+                        title: '¡Exito!',
+                        text: 'Cancha Alquilada con exito!',
+                        icon: 'success',
+                        button: 'Continuar',
+                    });
                     navigate('/historial');
-                    alert('Cancha Alquilada con Exito!');
                 }}>
                 {({ errors, values, setFieldValue }) => (
                     <Form action="">

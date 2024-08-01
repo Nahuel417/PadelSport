@@ -1,11 +1,14 @@
 import { Formik, Form, Field } from 'formik';
 import { validateLogin } from '../../helpers/validations';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUserActive } from '../../redux/reducer';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 const CajaFormLogin = () => {
+    const userActive = useSelector((state) => state.userData.userActive);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -19,9 +22,20 @@ const CajaFormLogin = () => {
                 navigate('/mi-perfil');
             }
         } catch (error) {
-            alert(error.response.data.error);
+            swal({
+                title: '¡Error!',
+                text: error.response.data.error,
+                icon: 'error',
+                button: 'Aceptar',
+            });
         }
     };
+
+    useEffect(() => {
+        if (userActive !== null) {
+            navigate('/mi-perfil');
+        }
+    }, [userActive, navigate]);
 
     return (
         <>

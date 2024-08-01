@@ -28,6 +28,11 @@ const MainMiHistorial = () => {
         if (userActive !== null) {
             fetchData();
         } else {
+            swal({
+                title: '¡Error de autenticación!',
+                text: 'Debe iniciar sesión para continuar',
+                icon: 'warning',
+            });
             navigate('/login');
         }
     }, [userActive, navigate]);

@@ -15,14 +15,45 @@ const CajaTurno = ({ turno: { id, asunto, fecha, horario, cancha, entrenador, st
             dispatch(editUserAppointment({ id: appointmentData.id, status: 'cancelado' }));
             setEstado('cancelado');
         } catch (error) {
-            console.log(error);
-            alert('No se puedo cancelar el turno');
+            swal({
+                title: '¡Error!',
+                text: 'No se puedo cancelar el turno',
+                icon: 'error',
+                button: 'Aceptar',
+            });
         }
     };
 
     const cambiarEstado = () => {
-        if (confirm('¿Desea cancelar el turno?') && status === 'activo') {
-            postFunctionLogin();
+        // validacion de cancelacion de turno (solo hasta un dia de la reseva del turno)
+        const fechaActual = new Date().toISOString().split('T')[0];
+        const fechaTurno = new Date(fecha);
+        const UltimoDia = new Date(fechaTurno);
+        UltimoDia.setDate(fechaTurno.getDate() - 1);
+        const UltimoDiaString = UltimoDia.toISOString().split('T')[0];
+
+        if (fechaActual <= UltimoDiaString) {
+            swal({
+                title: '¿Desea Cancelar el turno?',
+                icon: 'warning',
+                buttons: true,
+                dangerMode: true,
+            }).then((turnoCancelado) => {
+                if (turnoCancelado) {
+                    swal({
+                        title: '¡Turno Cancelado!',
+                        icon: 'success',
+                    });
+                    postFunctionLogin();
+                }
+            });
+        } else {
+            swal({
+                title: 'No se pudo cancelar el turno.',
+                text: 'Solo pueden ser cancelados hasta el día anterior a la reserva.',
+                icon: 'error',
+                button: 'Aceptar',
+            });
         }
     };
 

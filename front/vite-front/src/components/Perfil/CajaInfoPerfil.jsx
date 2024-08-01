@@ -10,24 +10,41 @@ const CajaInfoPerfil = () => {
     const navigate = useNavigate();
 
     const handleOnClick = () => {
-        if (confirm('¿Desea Cerrar Sesion?')) {
-            dispatch(removeUserActive());
-            navigate('/login');
-        }
+        swal({
+            title: '¿Desea Cerrar Sesion?',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        }).then((sesionCerrada) => {
+            if (sesionCerrada) {
+                dispatch(removeUserActive());
+                swal({
+                    title: '¡Cierre de sesión exitoso!',
+                    icon: 'success',
+                });
+                navigate('/');
+            }
+        });
     };
 
     // useEffect para la peticion al back
     useEffect(() => {
-        if (userActive === null) {
+        if (userActive == null) {
+            swal({
+                title: '¡Error de autenticación!',
+                text: 'Debe iniciar sesión para continuar',
+                icon: 'warning',
+            });
             navigate('/login');
         }
     }, [userActive, navigate]);
+    console.log(userActive);
 
     return (
         <div className="caja-info">
-            <h4 id="nombreCompleto-perfil">{`${userActive.user.name} ${userActive.user.last_name}`}</h4>
-            <p id="email-perfil">{userActive.email}</p>
-            <p id="fecha-perfil">{userActive.user.birthday}</p>
+            <h4 id="nombreCompleto-perfil">{`${userActive?.user.name} ${userActive?.user.last_name}`}</h4>
+            <p id="email-perfil">{userActive?.email}</p>
+            <p id="fecha-perfil">{userActive?.user.birthday}</p>
 
             <div className="caja-botones">
                 <button type="submit" id="boton-cerrarSesion" onClick={handleOnClick}>

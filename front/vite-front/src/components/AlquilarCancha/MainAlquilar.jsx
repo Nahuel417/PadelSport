@@ -10,6 +10,11 @@ const Main = () => {
 
     useEffect(() => {
         if (userActive === null) {
+            swal({
+                title: '¡Error de autenticación!',
+                text: 'Debe iniciar sesión para continuar',
+                icon: 'warning',
+            });
             navigate('/login');
         }
     }, [userActive, navigate]);

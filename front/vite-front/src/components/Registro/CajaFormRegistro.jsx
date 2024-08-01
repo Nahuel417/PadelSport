@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { labelsRegistro1, labelsRegistro2 } from '../../helpers/inputsDatos';
 import { validateRegister } from '../../helpers/validations';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import CajaLabelRegistro from './CajaLabelRegistro';
 import axios from 'axios';
 
@@ -16,10 +17,21 @@ const CajaFormRegistro = () => {
         try {
             await axios.post('http://localhost:3000/users/register', formData);
 
-            alert('Fue registrado con exito!');
+            swal({
+                title: '¡Exito!',
+                text: 'Fue registrado con exito!',
+                icon: 'success',
+                button: 'Continuar',
+            });
+
             navigate('/login');
         } catch (error) {
-            alert(error.response.data.error);
+            swal({
+                title: '¡Error!',
+                text: error.response.data.error,
+                icon: 'error',
+                button: 'Aceptar',
+            });
         }
     };
 
