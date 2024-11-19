@@ -55,14 +55,11 @@ $ npm install
 ## Ejecución de la aplicación
 
 ```bash
-# development
-$ npm run start
+# back
+$ npm start
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# back
+$ npm run dev
 ```
 ## Environment Variables
 Make sure to create a `.env` file in the project root with the following values:
