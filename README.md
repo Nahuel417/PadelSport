@@ -58,7 +58,7 @@ $ npm install
 # back
 $ npm start
 
-# back
+# front
 $ npm run dev
 ```
 
