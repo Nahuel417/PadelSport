@@ -66,10 +66,10 @@ Make sure to create a `.env` file in the project root with the following values:
 
 ```bash
 # Base de datos
-  DATA_BASE=                  # Nombre de la base de datos
-POSTGREST_USERNAME=                # Usuario de la base de datos
-POSTGREST_PASS=                # Contraseña para la base de datos
+DATA_BASE=                  # Nombre de la base de datos
+POSTGREST_USERNAME=         # Usuario de la base de datos
+POSTGREST_PASS=             # Contraseña para la base de datos
 
 # Puerto en el que se levanta el server
-PORT=               # Puerto de la base de datos PostgreSQL
+PORT=                       # Puerto de la base de datos PostgreSQL
 ```
