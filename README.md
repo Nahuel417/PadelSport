@@ -4,12 +4,12 @@
 Este proyecto es un gestor de turnos diseñado para organizar y administrar citas de manera eficiente, permitiendo a los usuarios programar, modificar y cancelar turnos según sus necesidades.
 
 ## Objetivos del proyecto
-1. **Automatización de procesos**: Reducir el trabajo manual en la gestión de turnos mediante una herramienta eficiente y fácil de usar.  
-2. **Mejorar la organización**: Proveer un sistema estructurado para la programación, modificación y cancelación de turnos.  
-3. **Facilitar la accesibilidad**: Permitir a los usuarios gestionar sus turnos desde cualquier lugar a través de una interfaz intuitiva.  
-4. **Optimizar el tiempo**: Minimizar el tiempo dedicado a la administración de turnos, tanto para los usuarios como para los administradores.  
-5. **Escalabilidad**: Diseñar el sistema para que pueda adaptarse a diferentes tipos de usuarios o sectores (médico, estético, profesional, etc.).  
-6. **Seguridad**: Garantizar la protección de los datos personales de los usuarios mediante autenticación segura y encriptación de información.  
+- **Automatización de procesos**: Reducir el trabajo manual en la gestión de turnos mediante una herramienta eficiente y fácil de usar.  
+- **Mejorar la organización**: Proveer un sistema estructurado para la programación, modificación y cancelación de turnos.  
+- **Facilitar la accesibilidad**: Permitir a los usuarios gestionar sus turnos desde cualquier lugar a través de una interfaz intuitiva.  
+- **Optimizar el tiempo**: Minimizar el tiempo dedicado a la administración de turnos, tanto para los usuarios como para los administradores.  
+- **Escalabilidad**: Diseñar el sistema para que pueda adaptarse a diferentes tipos de usuarios o sectores (médico, estético, profesional, etc.).  
+- **Seguridad**: Garantizar la protección de los datos personales de los usuarios mediante autenticación segura y encriptación de información.  
 
 ## Tecnologías Utilizadas
 
