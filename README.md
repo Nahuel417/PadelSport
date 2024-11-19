@@ -61,6 +61,7 @@ $ npm start
 # back
 $ npm run dev
 ```
+
 ## Environment Variables
 Make sure to create a `.env` file in the project root with the following values:
 
@@ -76,6 +77,14 @@ PORT=                       # Puerto de la base de datos PostgreSQL
 
 ## Capturas de Pantalla
 
+### Página Principal
+![Página Principal](https://github.com/user-attachments/assets/b7b30a6b-baa4-4f3a-9bda-0fb45afcacd8)
+
+### Formulario de Turnos
+![Formulario de Turnos](ruta/a/tu/captura2.png)
+
+### Detalle de Turno
+![Detalle de Turno](ruta/a/tu/captura3.png)
 
 ## Deploy (proximamente)
 
