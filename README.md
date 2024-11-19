@@ -12,6 +12,11 @@ Este proyecto es un gestor de turnos diseñado para organizar y administrar cita
 6. **Seguridad**: Garantizar la protección de los datos personales de los usuarios mediante autenticación segura y encriptación de información.  
 
 ## Tecnologías Utilizadas
+
+### Lenguajes de Programación
+- **JavaScript (JS)**: Utilizado en la mayoría de las configuraciones y en el front-end para la interacción dinámica.  
+- **TypeScript (TS)**: Empleado principalmente en el back-end para agregar tipado estático y mejorar la mantenibilidad del código.
+
 ### Back-End
 El back-end del proyecto está desarrollado con las siguientes tecnologías:
 
