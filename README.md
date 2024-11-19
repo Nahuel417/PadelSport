@@ -73,3 +73,9 @@ POSTGREST_PASS=             # Contraseña para la base de datos
 # Puerto en el que se levanta el server
 PORT=                       # Puerto de la base de datos PostgreSQL
 ```
+
+## Capturas de Pantalla
+
+
+## Deploy (proximamente)
+
