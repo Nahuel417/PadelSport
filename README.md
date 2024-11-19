@@ -64,22 +64,8 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
 ## Environment Variables
-Make sure to create a `.env.development` file in the project root with the following values:
+Make sure to create a `.env` file in the project root with the following values:
 
 ```bash
 # Base de datos
