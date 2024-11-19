@@ -82,6 +82,7 @@ PORT=                       # Puerto de la base de datos PostgreSQL
 
 ### Inicar Sesion y Registro
 ![Inicio Sesión](https://github.com/user-attachments/assets/67fa9866-6c90-4935-9509-b4da14fb3541)
+----------------------------------------------------------------------------------
 ![Registro](https://github.com/user-attachments/assets/a71406ef-10ff-42cc-9b57-b3bc265aa8cb)
 
 ### Formulario de Turnos
