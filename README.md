@@ -7,7 +7,7 @@
   </p>
 </p>
 
-# Proyecto Henry M3: PADEL SPORT!
+# BIENVENIDOS A PADEL SPORT!
 
 ## Descripción
 Este proyecto es un gestor de turnos diseñado para organizar y administrar citas de manera eficiente, permitiendo a los usuarios programar, modificar y cancelar turnos según sus necesidades.
