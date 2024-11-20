@@ -86,13 +86,13 @@ PORT=                       # Puerto de la base de datos PostgreSQL
 
 ## Capturas de Pantalla
 
-### Página Principal
-![Página Principal](https://github.com/user-attachments/assets/b7b30a6b-baa4-4f3a-9bda-0fb45afcacd8)
-
 ### Formulario de Turnos
 ![Formulario de Turnos](https://github.com/user-attachments/assets/522a1ffd-00e1-4ef3-860a-d11bc7a3115c)
+
 ![Formulario de Turnos](https://github.com/user-attachments/assets/6dd515e6-3054-4865-963f-383e83d3330c)
+
 ![Formulario de Turnos](https://github.com/user-attachments/assets/af96a969-661c-4e0e-a0f8-eb9ab68ee482)
+
 ![Formulario de Turnos](https://github.com/user-attachments/assets/65cb9a1a-8330-4aae-a4ea-d2b4e206990b)
 
 ## Deploy (proximamente)
