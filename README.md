@@ -7,12 +7,12 @@
   </p>
 </p>
 
-# BIENVENIDOS A PADEL SPORT!
+# 👋 BIENVENIDOS A PADEL SPORT!
 
-## Descripción
+## 📝 Descripción
 Este proyecto es un gestor de turnos diseñado para organizar y administrar citas de manera eficiente, permitiendo a los usuarios programar, modificar y cancelar turnos según sus necesidades.
 
-## Objetivos del proyecto
+## 🎯 Objetivos del proyecto
 - **Automatización de procesos**: Reducir el trabajo manual en la gestión de turnos mediante una herramienta eficiente y fácil de usar.  
 - **Mejorar la organización**: Proveer un sistema estructurado para la programación, modificación y cancelación de turnos.  
 - **Facilitar la accesibilidad**: Permitir a los usuarios gestionar sus turnos desde cualquier lugar a través de una interfaz intuitiva.  
@@ -20,7 +20,7 @@ Este proyecto es un gestor de turnos diseñado para organizar y administrar cita
 - **Escalabilidad**: Diseñar el sistema para que pueda adaptarse a diferentes tipos de usuarios o sectores (médico, estético, profesional, etc.).  
 - **Seguridad**: Garantizar la protección de los datos personales de los usuarios mediante autenticación segura y encriptación de información.  
 
-## Tecnologías Utilizadas
+## 💻 Tecnologías Utilizadas
 
 ### Lenguajes de Programación
 - **JavaScript (JS)**: Utilizado en la mayoría de las configuraciones y en el front-end para la interacción dinámica.  
